@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React</title>
+  <link rel="stylesheet" href="css/css.css">
+  <script src="js/react.production.min.js"></script>
+  <script src="js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="js/babel.min.js"></script>
+</head>
+<body>
+
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    ReactDOM.render(
+      <h1>Hello React</h1>,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <div id="root"></div>
+  <script type="text/babel">
+    const element = <h3>this is react</h3>;
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <div id="render"></div>
+  <script type="text/babel">
+    class Clock extends React.Component {
+      render() {
+        return (
+          <div>
+            <h1>定时器</h1>
+            <p>{this.props.date}</p>
+          </div>
+        )
+      }
+    }
+
+    function tick(date) {
+      ReactDOM.render(
+        <Clock date={date}/>,
+        document.getElementById('render')
+      )
+    }
+
+    tick(new Date().toLocaleTimeString())
+    setInterval(() => {
+      let _date = new Date().toLocaleTimeString();
+      tick(_date)
+    }, 1000)
+  </script>
+</div>
+</body>
+</html>

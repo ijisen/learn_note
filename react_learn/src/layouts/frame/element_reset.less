@@ -1,0 +1,64 @@
+// element-ui 样式重构
+
+// select选择框样式
+.el-select-dropdown__list > li {
+  &.selected,
+  &:hover {
+    background-color: @primary-3;
+    color: #fff;
+  }
+}
+.el-select-group > li{
+  &.selected,
+  &:hover {
+    background-color:@primary-3;
+    color: #fff;
+  }
+}
+
+//表格头样式
+.el-table th{
+  background:#eff4f8 !important;
+}
+.el-table th.is-leaf, .el-table td{
+  border-bottom: 1px solid #d2dae3;
+}
+.el-table--border th, .el-table--border td {
+  border-right: 1px solid #d2dae3;
+}
+// 不可编辑的input框文字不明显，修改颜色
+.el-input.is-disabled .el-input__inner,
+.el-textarea.is-disabled .el-textarea__inner{
+  color: #666 !important;
+}
+
+// 日期时间框，选择时间时，三列显示错位
+.el-time-panel,
+.el-time-panel__content,.el-time-spinner,.el-scrollbar__bar,
+.el-time-spinner__wrapper,
+.el-scrollbar__wrap,
+.el-scrollbar__view,.el-time-panel__content,.el-time-spinner__item,.el-scrollbar__thumb{
+  box-sizing: content-box !important;
+}
+.el-time-spinner.has-seconds .el-time-spinner__wrapper:nth-child(2){
+  margin-left:0
+}
+.el-tree-node__label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.el-date-editor .el-range-separator{
+  width: auto !important;
+}
+
+.el-tabs__header {
+  margin-bottom: 0 !important;
+}
+
+a {
+  color: @primary-color;
+  &:hover {
+    opacity: .8;
+  }
+}

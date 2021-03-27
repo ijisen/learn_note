@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+</head>
+<body>
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    class UserGreeting extends React.Component {
+      constructor(props) {
+        super(props)
+      }
+
+      render() {
+        return (<p>Welcome {this.props.name}</p>)
+      }
+    }
+
+    function GuestGreeting() {
+      return (<p>你好，访客</p>)
+    }
+
+    class Greeting extends React.Component {
+      constructor (props) {
+        super(props);
+      }
+      render() {
+        if (this.props.login) {
+          return <UserGreeting name={this.props.userName}/>
+        }
+        return <GuestGreeting/>
+      }
+    }
+
+    class Login extends React.Component {
+      constructor() {
+        super();
+        this.state = {
+          login: false,
+          userName: 'jisen'
+        };
+        this.handleExit = this.handleExit.bind(this);
+      }
+
+      handleLogin = (e) => {
+        if (this.state.login) {
+          return false
+        }
+        this.setState({
+          login: true
+        });
+        e && e.preventDefault();
+      }
+
+      handleExit() {
+        this.setState({
+          login: false
+        })
+      }
+
+      render() {
+        let button = (<span onClick={this.handleLogin}>登录</span>);
+        if (this.state.login) {
+          button = (<span onClick={this.handleExit}>退出</span>)
+        }
+        return (
+          <div>
+            <Greeting login={this.state.login} userName={this.state.userName}/>
+            <p>{ button }</p>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <Login />,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+
+<!-- 使用变量来储存元素 -->
+<div class="content">
+  <p class="title">使用变量来储存元素</p>
+  <div id="second"></div>
+  <script type="text/babel">
+    function UserGreeting(props) {
+      console.log(props)
+      return (<p>{props.name}</p>)
+    }
+
+    class LoginControl extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          isLogin: false,
+          name: 'null'
+        }
+      }
+
+      // 退出登录
+      handleClickLogout = () => {
+        this.setState((prevState, prevProps) => {
+          console.log(prevState);
+          console.log(prevProps);
+          return {
+            isLogin: false
+          }
+        })
+      };
+      // 登录账户
+      handleClickLogin = () => {
+        this.setState(() => {
+          return {
+            isLogin: true,
+            name: 'jisen'
+          }
+        })
+      }
+
+      render() {
+        let str = null;
+        console.log(this.state)
+        if (this.state.isLogin) {
+          console.log(111)
+          str = (
+            <div>
+              <UserGreeting name={this.state.name}/>
+              <p onClick={this.handleClickLogout}>退出登录</p>
+            </div>
+          )
+        } else {
+          console.log(222)
+          str = (<p onClick={this.handleClickLogin}>登录</p>)
+        }
+        console.log(str);
+        return (<div>{str}</div>);
+      }
+    }
+
+    ReactDOM.render(
+      <LoginControl/>,
+      document.getElementById('second')
+    )
+  </script>
+</div>
+
+<!-- && 运算符 -->
+<div class="content">
+  <p>&& 运算符</p>
+  <div id="third"></div>
+  <script type="text/babel">
+    const message = ['python', 'html', 'js'];
+
+    function MessageTips(props) {
+      let message = props.message;
+      return (
+        <div>{message.length > 0 && (<span>共有 <strong>{message.length}</strong> 条消息</span>)}</div>
+      )
+    }
+
+    MessageTips.defaultProps = {
+      message: []
+    };
+    ReactDOM.render(
+      <MessageTips message={message}/>,
+      document.getElementById('third')
+    )
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+// 右侧容器布局共享样式
+.layout-content-right .container {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  .header-search {
+    width: 100%;
+    height: auto;
+    .el-select {
+      width: 200px;
+    }
+    // button {
+    //   min-width: 83px;
+    // }
+  }
+  .top-bar {
+    margin-top: -5px;
+    margin-bottom: 15px;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #eee;
+    h5.nav-title {
+      font-weight: 500;
+      line-height: 15.4px;
+      border-left: 2px solid @primary-color;
+      padding-left: 10px;
+      margin: 0 10px 0 0;
+      display: inline-block;
+      font-size: 14px;
+    }
+    .top-bar-btn {
+      padding: 7px 15px;
+      float: right;
+      background: @primary-color;
+      border-color: transparent;
+      font-size: 12px;
+      line-height: 1;
+      border-radius: 3px;
+      color: #fff;
+      border: 1px solid @primary-color;
+      &:hover {
+        background: @primary-1;
+        cursor: pointer
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+}

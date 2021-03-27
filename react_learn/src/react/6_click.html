@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React_OnClick</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+</head>
+<body>
+<div class="content">
+  <p class="title">React Clcik 事件处理</p>
+  <div id="app"></div>
+  <script type="text/babel">
+    class Toggle extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          name: 'jisen',
+          age: 24,
+          isToggleOn: true
+        };
+
+        // 这边绑定是必要的，这样 `this` 才能在回调函数中使用
+        this.handleClick = this.handleClicked.bind(this);
+        this.changeName = () => {
+          this.setState((prevState, prevProps) => {
+            console.log(prevState);
+            console.log(prevProps);
+            return {
+              name: '李雷'
+            }
+          })
+        }
+      }
+      // 需要绑定 this 指向
+      handleClicked () {
+        /* this.setState(prevState => ({    // 这个参数
+           isToggleOn: !prevState.isToggleOn
+         }));*/
+        // setState() 可以接收一个函数，这个函数接受两个参数，第一个参数表示上一个状态值，第二参数表示当前的 props，
+        this.setState((prevState, prevProps) => {
+          console.log(prevState);
+          console.log(prevProps);
+          return {
+            isToggleOn: !prevState.isToggleOn
+          }
+        });
+      };
+      // 不需要绑定 this 指向
+      changeAge = (age, e) => {
+        console.log(age);
+        this.setState((prevState) => {
+          prevState.age++;
+          console.log(prevState.age);
+          return {
+            age: prevState.age
+          }
+        });
+        e && e.preventDefault();
+      };
+
+      render() {
+        return (
+          <div>
+            <button onClick={this.handleClick}>
+              {this.state.isToggleOn ? 'ON' : 'OFF'}
+            </button>
+            <span className="pll" onClick={this.changeName}>{ this.state.name }</span>
+            {/* 向事件处理程序传递参数 */}
+            <span className="pll" onClick={this.changeAge.bind(this, 10)}>{ this.state.age }</span>
+            {/* 向事件处理程序传递参数 */}
+            <span className="pll" onClick={(e) => {this.changeAge(20, e)}}>{ this.state.age }</span>
+          </div>
+        );
+      }
+    }
+    ReactDOM.render(
+      <Toggle />,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+</body>
+</html>

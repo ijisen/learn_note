@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React-Component</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+</head>
+<body>
+
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    // 使用普通函数定义一个组件：
+    // 组件首字母需要大写
+    const Components = (props) => {
+      console.log(props);
+      return (<h1>普通组件 {props.name} {props.age}</h1>)
+    };
+    const element = (
+      <div>
+        <Components name="jisen"/>
+        <Components name="jisen" age={25}/>
+      </div>
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <div id="app-es6"></div>
+  <script type="text/babel">
+    class Components extends React.Component {
+      render() {
+        return (<h1>ES6 Class 组件 {this.props.name}</h1>)
+      }
+    }
+
+    let _name = 'lilei';
+    ReactDOM.render(
+      <Components name={_name}/>,
+      document.getElementById('app-es6')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <div id="com-app"></div>
+  <script type="text/babel">
+    function Name(props) {
+      return (<h1>{props.name}</h1>)
+    }
+
+    function Gender(props) {
+      return (<p>{props.gender}</p>)
+    }
+
+    class NickName extends React.Component {
+      render() {
+        return (<span>{this.props.nickName}</span>)
+      }
+    }
+
+    const element = (
+      <div>
+        <Name name="jisen"/>
+        <Gender gender={"boy"}/>
+        <NickName nickName="json"/>
+      </div>
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('com-app')
+    )
+  </script>
+</div>
+</body>
+</html>

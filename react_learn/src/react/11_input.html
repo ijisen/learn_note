@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+</head>
+<body>
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    class Content extends React.Component {
+      constructor (props) {
+        super(props)
+      }
+      render() {
+        return (
+          <div>
+            <p>{ this.props.name }</p>
+            <input type="text" value={this.props.name} onChange={this.props.updateStateProp} />
+          </div>
+        )
+      }
+    }
+    class HelloMsg extends  React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          name: 'Hello Msg'
+        };
+        this.handleChange = (e) => {
+          let _value = e.target.value;
+          this.setState({
+            name: _value
+          }, () => {
+            console.log(_value);
+            console.log(`handle Change`)
+          })
+        }
+      }
+      render () {
+        return (
+          <div>
+            <Content name={this.state.name} updateStateProp={this.handleChange} />
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(
+      <HelloMsg />,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+</body>
+</html>

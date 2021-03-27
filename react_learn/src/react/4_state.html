@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React-State</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+</head>
+<body>
+<!-- React State(状态) -->
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    let _date = new Date().toLocaleTimeString();
+
+    class Clock extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          date: new Date(),
+        };
+      }
+
+      // React钩子函数 组件挂载
+      componentDidMount() {
+        this.timerID = setInterval(() => {
+          this.tick()
+        }, 1000);
+      }
+
+      // React钩子函数 组件卸载
+      componentWillUnmount() {
+        clearInterval(this.timerID);
+      }
+
+      tick() {
+        // setState() 来调度UI更新。 通过调用 setState() ，React 知道状态已经改变，
+        this.setState({
+          date: new Date()
+        });
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>Hello, world!</h1>
+            <h2>现在是 {this.state.date.toLocaleTimeString()}.</h2>
+            <h2>现在是 {this.props.date}.</h2>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <Clock date={_date}/>,
+      document.getElementById('app')
+    );
+  </script>
+</div>
+
+<div class="content">
+  <div id="app-down"></div>
+  <script type="text/babel">
+    function Element(props) {
+      return (<h1>111 - {props.date}</h1>)
+    }
+
+    class Clock extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          date: new Date().toLocaleTimeString()
+        }
+      }
+
+      componentDidMount() {
+        this.timerID = setInterval(() => {
+          this.tick()
+        }, 1000)
+      }
+
+      componentWillUnmount() {
+        clearInterval(this.timerID)
+      }
+
+      tick() {
+        // setState() 可以接收一个函数，这个函数接受两个参数，第一个参数表示上一个状态值，第二参数表示当前的 props，
+        this.setState({
+          date: new Date().toLocaleTimeString()
+        })
+      }
+
+      render() {
+        return (<Element date={this.state.date}/>)
+      }
+    }
+
+    ReactDOM.render(
+      <Clock/>,
+      document.getElementById('app-down')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <div id="root"></div>
+  <script type="text/babel">
+    function Element (props) {
+      return (<h3>{props.date}</h3>)
+    }
+    class Clock extends React.Component {
+      constructor(props) {
+        super(props);
+        this.timerID = null;
+        this.state = {
+          date: new Date().toLocaleTimeString()
+        }
+      }
+      componentDidMount () {
+        this.timerID = setInterval(() => {
+          this.tick()
+        }, 1000)
+      }
+      tick () {
+        this.setState({
+          date: new Date().toLocaleTimeString()
+        })
+      }
+      render() {
+        return (
+          <div>
+            <h1>State</h1>
+            <Element date={this.state.date}></Element>
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(
+      <Clock />,
+      document.getElementById('root')
+    )
+  </script>
+</div>
+</body>
+</html>

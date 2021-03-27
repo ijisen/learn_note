@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React-JSX</title>
+  <link rel="stylesheet" href="css/css.css">
+  <script src="js/react.production.min.js"></script>
+  <script src="js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="js/babel.min.js"></script>
+</head>
+<body>
+<!-- JSX !== HTML -->
+<div class="content">
+  <p class="title">JSX 是 JavaScript 的扩展语法</p>
+  <div id="app"></div>
+  <script type="text/babel">
+    function setData(data) {
+      return `hello ${data.name}, welcome to my word`;
+    }
+
+    const render_data = {
+      name: 'jisen'
+    };
+    // JSX 带上换行和缩进可以增强代码的可读性
+    // () 可以避免 分号 自动插入引起的BUG
+    // 变量插入用 {}
+    const element = (
+      <p className="info">
+        {setData(render_data)}
+      </p>
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <p class="title">JSX 本身是一种表达式， 可以使用js所有的语法进行数据|逻辑处理</p>
+  <div id="root">
+    <p class="info">your browser is not support React!!!</p>
+  </div>
+  <script type="text/babel">
+    function setData(data) {
+      let res = [];
+      for (let i = 0, len = data.length; i < len; i++) {
+        let _item = data[i];
+        if (_item.gender === 'man') {
+          res.push(<p className="info">hello {_item.name} 先生</p>)
+        } else {
+          res.push(<p className="info">hello {_item.name} 女士</p>)
+        }
+      }
+      return res
+    }
+
+    const data = [
+      {
+        name: 'jisen',
+        gender: 'man'
+      },
+      {
+        name: 'lucy',
+        gender: 'girl'
+      }
+    ];
+    const element = (
+      <div>
+        {setData(data)}
+      </div>
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <p class="title">JSX 可以接收数组格式的 JSX数据，自动渲染列表</p>
+  <div id="arr_jsx"></div>
+  <script type="text/babel">
+    const data = [
+      <p className="info">1</p>,
+      <p className="info">2</p>,
+      <p className="info">4</p>
+    ];
+    ReactDOM.render(
+      data,
+      document.getElementById('arr_jsx')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <p class="title">JSX 使用引号来定义字符串的属性，也可以使用花括号来定义JavaScript表达式值得属性</p>
+  <div id="jsx_attr"></div>
+  <script type="text/babel">
+    const _attr = 'jisen';
+    const element = (
+      <p className="info" title="jisen_title" tabIndex={_attr}>{_attr}</p>
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('jsx_attr')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <p class="title">JSX 嵌套</p>
+  <div id="jsx_in"></div>
+  <script type="text/babel">
+    const Childement = function (props) {
+      console.log(props);
+      return (
+        <span>child {props.node}</span>
+      );
+    };
+    const parentElement = (
+      <div className="info">
+        <p>parent node</p>
+        <Childement node="node"/>
+      </div>
+    );
+    ReactDOM.render(
+      parentElement,
+      document.getElementById('jsx_in')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <p class="title">JSX 防注入攻击, React DOM 会将所以数据在渲染之前全部转换成字符串</p>
+  <div id="jsx_xss"></div>
+  <script type="text/babel">
+    const _str = '<p>i am xss</p>';
+    const element = (
+      <h1>
+        <p className="info">xxs {_str}</p>
+      </h1>
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('jsx_xss')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <p class="title">JSX Object</p>
+  <div id="jsx_object"></div>
+  <script type="text/babel">
+    const element = React.createElement(
+      'p',
+      {className: 'info'},
+      'jsx object'
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('jsx_object')
+    )
+  </script>
+</div>
+</body>
+</html>

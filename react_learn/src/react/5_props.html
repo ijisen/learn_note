@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- Props 验证使用 propTypes，它可以保证我们的应用组件被正确使用 -->
+  <script src="../assets/js/prop-types.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+</head>
+<body>
+<!-- es5 Props 传参 -->
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    function Element (props) {
+      console.log(props)
+      return (<h1>{ props.name }</h1>)
+    }
+    ReactDOM.render(
+      <Element name={'jisen'} />,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+
+<!-- es6 class 传参-->
+<div class="content">
+  <div id="root"></div>
+  <script type="text/babel">
+    class Element extends React.Component {
+      render () {
+        return (<h1>{ this.props.name }</h1>)
+      }
+    }
+    // 设置默认Props
+    Element.defaultProps = {
+      name: 'jisen'
+    };
+    const element = (
+      <div>
+        <Element />
+        <Element name="李磊" />
+      </div>
+    );
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    )
+  </script>
+</div>
+
+<!-- props & state 组合-->
+<div class="content">
+  <p class="title">props && state 组合使用</p>
+  <div id="third"></div>
+  <script type="text/babel">
+    class WebSite extends React.Component {
+      constructor () {
+        super();
+        this.state = {
+          site: [
+            {
+              name: '百度',
+              link: 'www.baidu.com'
+            },
+            {
+              name: 'zdns',
+              link: 'www.zdns.cn'
+            }
+          ]
+        }
+      }
+
+      render () {
+        let data = [];
+        this.state.site.forEach((item, index) => {
+          console.log(item);
+          data.push(<p key={index}><WebName name={ item.name } /><WebLink link={ item.link } /></p>)
+        });
+        console.log(data);
+        return (data)
+      }
+    }
+
+    class WebName extends React.Component {
+      render () {
+        return (<span>{ this.props.name }</span>)
+      }
+    }
+
+    class WebLink extends React.Component {
+      render () {
+        return (<span>{ this.props.link }</span>)
+      }
+    }
+
+    ReactDOM.render(
+      <WebSite />,
+      document.getElementById('third')
+
+    )
+  </script>
+</div>
+
+<!-- prop 验证 新版本方法待学习 -->
+<div class="content">
+  <p class="title">Props 验证使用 propTypes，它可以保证我们的应用组件被正确使用，
+    React.PropTypes 提供很多验证器 (validator) 来验证传入数据是否有效。
+    当向 props 传入无效数据时，JavaScript 控制台会抛出警告。</p>
+  <div id="fourth"></div>
+  <script type="text/babel">
+    var title = 11;
+    // var title = 123;
+    class MyTitle extends React.Component {
+      render() {
+        return (
+          <h1>Hello, {this.props.title}</h1>
+        );
+      }
+    }
+
+    MyTitle.propTypes = {
+      title: PropTypes.string
+    };
+    ReactDOM.render(
+      <MyTitle title={title} />,
+      document.getElementById('fourth')
+    )
+  </script>
+</div>
+</body>
+</html>

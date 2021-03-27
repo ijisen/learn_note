@@ -1,0 +1,27 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+.content {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #f7f7f7;
+  height: auto;
+  color: #8dc891;
+}
+.content .title {
+  color: #fc929e;
+  margin-bottom: 10px;
+}
+.content .info {
+  color: #8dc891;
+}
+.content .pll {
+  padding-left: 10px;
+}
+.content .mll {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=css.css.map */
