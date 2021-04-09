@@ -1,0 +1,22 @@
+{
+  "name": "node_koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "sqlite": "node src/pages/sequelize/sequelize.sqlite.js",
+    "mysql": "node src/pages/sequelize/sequelize.mysql.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-router": "^9.4.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
+  }
+}
