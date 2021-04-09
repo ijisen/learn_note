@@ -1,7 +1,7 @@
 # webpack 简介
 __一款模块加载器兼打包工具__
 
-## 一、安 装
+## 一、安装
 ```
 全局安装
 npm install webpack -g
