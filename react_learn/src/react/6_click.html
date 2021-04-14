@@ -72,6 +72,7 @@
             {/* 向事件处理程序传递参数 */}
             <span className="pll" onClick={this.changeAge.bind(this, 10)}>{ this.state.age }</span>
             {/* 向事件处理程序传递参数 */}
+            {/* 如果该回调函数作为 prop 传入子组件时，这些组件可能会进行额外的重新渲染 */}
             <span className="pll" onClick={(e) => {this.changeAge(20, e)}}>{ this.state.age }</span>
           </div>
         );

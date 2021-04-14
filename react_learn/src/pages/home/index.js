@@ -5,7 +5,7 @@ import {
   Icon
 } from 'antd';
 import LeftNavbar from './LeftNavbar'
-import RouteWithSubRoutes from '@/commponents/RouteWithSubRoutes'
+import RouteWithSubRoutes from '../../commponents/RouteWithSubRoutes'
 
 const {Header, Content, Sider} = Layout;
 

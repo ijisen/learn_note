@@ -7,7 +7,7 @@
  *  PS: reducer  类似于 vuex 的 state
  * ============================================================== */
 
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import {
   ADD_TODO,
   TOGGLE_TODO,
@@ -15,7 +15,7 @@ import {
   VisibilityFilters
 } from './actionTypes';
 
-const {SHOW_ALL} = VisibilityFilters;
+const { SHOW_ALL } = VisibilityFilters;
 
 function visibilityFilter(state = SHOW_ALL, action) {
   switch (action.type) {
@@ -29,7 +29,7 @@ function visibilityFilter(state = SHOW_ALL, action) {
 function todos(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
-      const {id, content} = action.payload;
+      const { id, content } = action.payload;
       return [
         ...state,
         {

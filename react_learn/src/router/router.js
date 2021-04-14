@@ -9,6 +9,7 @@ import TodoList from '../pages/todo-list';
 import Redux from '../pages/redux';
 import CreateStore from '../pages/redux/create-store';
 import Reducer from '../pages/redux/reducer'
+import ErrorBoundary from '../pages/errorBoundary'
 // 演示用例
 import Demo from '../pages/demo';
 import ES5 from '../pages/demo/children/es5';
@@ -192,6 +193,33 @@ export default [
             }
           }
         ]
+      },
+      {
+        name: '错误边界',
+        path: '/error-boundary',
+        component: ErrorBoundary,
+        meta: {
+          type: 'page',
+          icon: 'reddit'
+        }
+      },
+      {
+        name: 'Ref',
+        path: '/ref',
+        component:  require('../pages/ref').default,
+        meta: {
+          type: 'page',
+          icon: 'reddit'
+        }
+      },
+      {
+        name: 'hook',
+        path: '/hook',
+        component:  require('../pages/customHook').default,
+        meta: {
+          type: 'page',
+          icon: 'reddit'
+        }
       },
       {
         path: '*',

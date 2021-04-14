@@ -7,7 +7,7 @@ import routes from './router/router'
 
 import './App.less';
 
-import RouteWithSubRoutes from '@/commponents/RouteWithSubRoutes'
+import RouteWithSubRoutes from './commponents/RouteWithSubRoutes'
 
 class App extends React.Component {
   render() {
