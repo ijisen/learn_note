@@ -21,6 +21,8 @@
     },
     setup(props) {
       // 使用 `toRefs` 创建对prop的 `user` property 的响应式引用
+      // 因为 props 是响应式的，不能使用 ES6 解构，因为它会消除 prop 的响应性
+      // const { userId } = props; 不能这样解构
       const { userId } = toRefs(props);
       // 创建 ref 的响应式变量
       let listData = ref([])
@@ -31,7 +33,6 @@
       console.log(2222222222)
       const getListData = () => {
         console.log(userId.value);
-        console.log(userIdReverse)
         console.log(userIdReverse.value)
         console.log(3333333);
         setTimeout(() => {
