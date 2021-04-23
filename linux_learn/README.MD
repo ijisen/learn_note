@@ -14,6 +14,8 @@ rm 删除文件
    
 mv 修改文件名
    mv old_name new_name
+   
+cat 查看文件内容
   
 ctrl + l 清空屏幕快捷键
 
