@@ -226,6 +226,8 @@ config
 	  git config --global alias.br branch  
 	  git config --global alias.last 'log -1' //git log -1 == git last显示最近一次的提交
 	  git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	  git config branch.<分支名>.description "description" 添加分支描述信息
+	  git config branch.<分支名>.description 查看分支描述信息
 	  
 SUMMARY:
 	001、 在开发过程中，注意分支场景，切换分支场景前，要用commit/stash保存任务，避免分支任务错乱
