@@ -129,10 +129,13 @@ merge
 		//id_rsa和id_rsa.pub两个文件，这两个是SSH Key的秘钥对，id_rsa是私钥，不能泄露，id_rsa.pub是公钥，可以告诉任何人。
 		
 	2、需要将id_rsa.pub的值在github里面配置SSH
+	
+	3、 查看当前电脑是否生成ssh
+		ls -al ~/.ssh
 		
 	git remote add origin https://github.com/ijisen/gitslearn.git  //关联远程仓库地址（origin == 远程仓库）
 	
-	git remote set-url origin https://github.com/ijisen/GIT-Learn //修改远程仓库地址（origin == 远程仓库）
+	git remote set-url origin https://github.com/ijisen/weChat-Learn/ //修改远程仓库地址（origin == 远程仓库）
 	
 	git push -u origin master   // 传输文件至远程仓库  ( 参数 -u，Git不但会把本地的master分支内容推送到远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时可以简化命令。)
 	
