@@ -154,3 +154,11 @@ class ControlStatementWhile {
         }
     }
 }
+
+/**
+ * 循环语句打断
+ *
+ * break  打断循环
+ * continue 跳过循环
+ *
+ * */
