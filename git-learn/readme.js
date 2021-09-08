@@ -244,6 +244,8 @@ SUMMARY:
 		git config --system http.sslverify false
 	eg2： error failed to push some refs to 'https://github.com/ijisen/react_learn'
 		git git pull --rebase origin master
+	eg3： 个人访问令牌
+		创建后， 运行cmd 输入 control 点击windows凭据删除你的git凭据即
 
 	
 		
