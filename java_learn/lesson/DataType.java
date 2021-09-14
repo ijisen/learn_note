@@ -4,19 +4,19 @@
  * 基本数据类型【原始数据类型】
  * 第一类： Integer【整数型】
  * ------- 数据类型 ------- 占用空间大小【单位：子节】
- *          byte               1 【-128 - 127】
- *          short              2 【-32768 - 32767】
- *          int                4 【-2147483648 - 2147483647】
- *          long               8
+ * byte               1 【-128 - 127】
+ * short              2 【-32768 - 32767】
+ * int                4 【-2147483648 - 2147483647】
+ * long               8
  * 第二类： Float【浮点型】
- *          float              4
- *          double             8
+ * float              4
+ * double             8
  * 第三类： Boolean【布尔型】
- *          boolean            1 【true, false】
+ * boolean            1 【true, false】
  * 第四类： String【字符型】
- *          char               2 【0-65535】
+ * char               2 【0-65535】
  * ps: short & char 有效位数一样，只不过char能表示更多的正数
- *
+ * <p>
  * 引用数据类型
  * 接口
  * 数组
@@ -46,17 +46,29 @@ public class DataType {
 class DataTypeNumber {
     public static void main(String[] arg) {
         /**
-         * java 语言中会把 数字 当作 int类型处理
+         * java 语言中会把 "整数型字面值" 默认当作 int类型处理
+         * java 语言中整数型有三种书写方式 十进制、八进制、十六进制
+         * */
+        // 十进制 10
+        int aa = 10;
+        // 八进制 8
+        int bb = 010;
+        // 十六进制 16
+        int cc = 0x10;
+        /**
+         * 大容量转换成小容量，需要进行强制类型转换
+         * 强制类型转换容易损失精度
          * */
         // 添加 L 是将 2147483648 转换成long类型
         // Error: Integer number too large
         // long a = 2147483648
         long a = 2147483648L;
         // 强制转换, 损失精度非常严重
-        int e = (int)a;
+        int b = (int) a;
         System.out.println(a);
         // -2147483648
-        System.out.println(e);
+        System.out.println(b);
+
     }
 }
 

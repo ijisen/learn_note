@@ -1,7 +1,7 @@
 /**
  * java 中叫方法， 不叫函数
- * 方法必须定义在类当中， 方法定义顺序没有先后顺序
- * 形参是局部变量
+ * -- 方法必须定义在类当中， 方法定义顺序没有先后顺序
+ * -- 形参是局部变量
  */
 public class Method {
     /**
@@ -40,3 +40,23 @@ public class Method {
     }
 }
 
+/**
+ * 方法重载
+ */
+
+class MethodOverload {
+    public static void main(String[] args) {
+        System.out.println(sum(1, 2));
+        System.out.println(sum(1.2, 2.4));
+    }
+
+    public static int sum(int a, int b) {
+        System.out.println("sum float");
+        return a + b;
+    }
+
+    public static float sum(float a, float b) {
+        System.out.println("sum int");
+        return a + b;
+    }
+}
