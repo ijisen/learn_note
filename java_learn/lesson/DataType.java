@@ -43,10 +43,13 @@ public class DataType {
     }
 }
 
+/**
+ * 数据类型-整数型
+ * java 语言中会把 "整数型字面值" 默认当作 int类型处理
+ */
 class DataTypeNumber {
     public static void main(String[] arg) {
         /**
-         * java 语言中会把 "整数型字面值" 默认当作 int类型处理
          * java 语言中整数型有三种书写方式 十进制、八进制、十六进制
          * */
         // 十进制 10
@@ -68,10 +71,53 @@ class DataTypeNumber {
         System.out.println(a);
         // -2147483648
         System.out.println(b);
-
+        /**
+         * 大容量转小容量需要进行强制类型转换，以下代码编译没有报错。
+         * 是因为当前字面值没有超出所属数据类型的取值范围，可以正常编译。
+         * */
+        byte aByte = 70;
+        System.out.println(aByte);
+        // 从int转换到byte可能会有损失
+        // byte bByte = 127;
+        // System.out.println(bByte);
+        int aInt = 70;
+        // 大容量转小容量，需要强制转换
+        short aShort = (short) aInt;
+        long aLong = aInt;
+        System.out.println(aLong);
     }
 }
 
+/**
+ * 数据类型-浮点型
+ * double 双精度【8个子节】
+ * float  单精度【4个子节，精度较高】
+ * java 语言中会把 "浮点型字面值" 默认当作 double 类型处理
+ * double 精度低【相对的】，不适合财务软件， sun 提供了  java.math.BigDecimal 类库，
+ */
+
+class DataTypeFloat {
+    public static void main(String[] arg) {
+        double a = 5.0;
+        System.out.println(a);
+        /**
+         * 大容量转换成小容量，需要进行强制类型转换
+         * 强制类型转换容易损失精度
+         * 5.0 是 double 类型的字面值
+         * b 是 float 类型的变量
+         * */
+        // 强制转换
+        float b = (float) 5.0;
+        System.out.println(b);
+        // 没有类型转换
+        float c = 5.1f;
+        System.out.println(c);
+    }
+}
+
+/**
+ * 数据类型-字符串
+ */
 class DataTypeChar {
     public static void main(String[] arg) {
         char a = 'a';

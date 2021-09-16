@@ -2,7 +2,7 @@
  * Restful 接口文档规范
  */
 
-const httpCode = {
+const serverCodeMessage = {
   /**
    * 操作成功状态码
    * 操作成功状态码 [2XX]
@@ -13,7 +13,7 @@ const httpCode = {
   // POST =》 CREATE
   // PUT =》 OK 更新全部信息
   // PATCH =》 OK 更新部分信息
-  201: 'Created|OK|OK',
+  201: 'OK',
   // 一个请求已经进入后台排队（异步任务）。
   202: 'Accepted',
   // 删除资源成功。
@@ -49,11 +49,15 @@ const httpCode = {
    * */
   // 服务器发生错误，请检查服务器。
   500: 'Internal Server Error',
+  // 网关错误
+  502: 'Bad Gateway',
   // 服务不可用，服务器暂时过载或维护
   503: 'Service Unavailable'
+  // 网关超时
+  504: 'Gateway Timeout',
 };
 
-const responseCode = {
+const responseCodeMessage = {
   1000: '响应成功',
   // 参数错误 #1000～1999
   1001: '参数为空',

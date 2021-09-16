@@ -42,6 +42,9 @@ public class Method {
 
 /**
  * 方法重载
+ *
+ * 方法重载机制只和 方法名称 和 参数列表有关系，
+ *
  */
 
 class MethodOverload {
