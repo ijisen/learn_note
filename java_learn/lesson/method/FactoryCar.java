@@ -12,8 +12,8 @@ public class FactoryCar {
         // System.out.println(this.count);
     }
     // 求和方法
-    public static int sumInt() {
-        this.count++;
+    public static int sumInt(count) {
+        count++;
         System.out.println("汽车工厂");
         return 0;
     }
