@@ -16,10 +16,5 @@ public class Student {
     // age
     int age;
     // address
-    String address;
-
-    /**
-     * 方法
-     * 方法描述对象的动作信息
-     * */
+    Address addr;
 }
