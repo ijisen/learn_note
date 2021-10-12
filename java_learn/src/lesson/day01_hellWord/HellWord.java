@@ -1,4 +1,4 @@
-package lesson.day01;
+package lesson.day01_hellWord;
 
 public class HellWord {
     public static void main(String[] args) {
