@@ -29,6 +29,10 @@ public class User {
         System.out.println("缺省构造器, 会自动执行。获取 NAME-AGE 参数：" + name + "-" + age);
     }
 
+
+    /**
+     * 缺省构造器， 编译时会自动生成
+     */
     public User() {
         System.out.println("缺省构造器, 会自动执行");
     }
