@@ -11,6 +11,7 @@ public class Customer {
     // 没有static关键字的变量：实例变量
     private String name;
     int i;
+    static int key;
 
     /**
      * 构造方法
@@ -89,6 +90,7 @@ public class Customer {
         t.doOther();
         // 省略方式 => 没有方式可调用 【static 不能调用实例方法，也不能调用实例变量】
 
+        System.out.println(key);
         System.out.println("method1");
     }
 
@@ -104,6 +106,9 @@ public class Customer {
         this.doOther();
         // 省略方式 => 没有方式可调用
         doOther();
+        key ++;
+        System.out.println(key);
+        System.out.println(this.id);
         System.out.println("method2");
     }
 
