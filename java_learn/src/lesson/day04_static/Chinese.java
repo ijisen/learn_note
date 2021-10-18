@@ -8,6 +8,7 @@ package lesson.day04_static;
  *  2. 使用static修饰的变量： 静态变量
  *  3. 所有的static修饰的元素都称为静态的，
  *  4. static修饰的所有元素，都是类级别的特征，和具体对象无关
+ *  5. 静态方法中，无法直接访问实例变量、实例方法
  * */
 public class Chinese {
     // 身份证ID  实例变量
