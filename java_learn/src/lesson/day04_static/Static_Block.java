@@ -37,7 +37,7 @@ public class Static_Block {
     }
 
     // 主方法
-    public static void main(String arg[]) {
+    public static void main(String[] arg) {
         System.out.println("main ");
         // 构造函数执行一次， 实例代码块就执行一次
         new Static_Block();
