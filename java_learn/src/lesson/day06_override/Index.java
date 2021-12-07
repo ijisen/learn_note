@@ -11,6 +11,8 @@ package lesson.day06_override;
  * ​  3，父类成员的方法只能被它的子类重写。
  * ​  4，被final修饰的方法不能被重写。
  * ​  5，构造方法不能
+ * Super 关键字的使用
+ *   当需要在子类中调用父类的被重写方法时，要使用 super 关键字。
  */
 public class Index {
     public static void main(String[] args) {
