@@ -42,23 +42,3 @@ tar 解压文件
        export NODE_HOME=/node-v10.15.3-linux-x64
        export PATH=$PATH:$NODE_HOME/bin 
        export NODE_PATH=$NODE_HOME/lib/node_modules
-	
-		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
