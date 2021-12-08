@@ -8,7 +8,7 @@ package lesson.day07_polymorphic;
  * --> 2、重写
  * --> 3、父类引用指向子类对象：Parent p = new Child();
  * 【多态的优点】
- * -->  1. 消除类型之间的耦合关系
+ * -->  1. 消除类型之间的耦合关系, 提高代码的拓展性
  * -->  2. 可替换性
  * -->  3. 可扩充性
  * -->  4. 接口性
@@ -30,8 +30,12 @@ public class Index {
         Animal a = new Cat();
         // 猫儿在捉老鼠...
         a.run();
+        a.setAnimalName("ANIMAL");
+        a.getAnimalName();
         // Animal 中没有 getFeature 方法，编译会报错：
         // a.getFeature();
+        // Animal 中没有 getFeature 方法，编译会报错：
+        // a.setName("CAT");
 
         /**
          * 向下转型【downcasting 强制转换 】
@@ -43,13 +47,17 @@ public class Index {
          * 它可以使用instanceof来避免出错此类错误即能否向下转型，只有先经过向上转型的对象才能继续向下转型。
          * */
         // 猫儿有四条腿...
-        ((Cat) a).getFeature();
+        // ((Cat) a).getFeature();
         // 类型判断
         // 向下转型   downCasting 强制转换
         // 猫儿有四条腿...
         if (a instanceof Cat) {
             Cat a2 = (Cat) a;
+            // ANIMAL
+            a.getAnimalName();
             a2.getFeature();
+            a2.setName("CAT");
+            a2.getName();
         } else if (a instanceof Bird) {
             Bird a2 = (Bird) a;
             a2.fly();

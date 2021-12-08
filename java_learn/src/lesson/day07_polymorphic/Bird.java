@@ -1,6 +1,7 @@
 package lesson.day07_polymorphic;
 
 public class Bird extends Animal {
+    @Override
     public void run () {
         System.out.println("鸟儿在捉虫子...");
     }

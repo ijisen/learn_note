@@ -1,7 +1,17 @@
 package lesson.day07_polymorphic;
 
 public class Animal {
-    public void run () {
+    String animalName;
+
+    public void run() {
         System.out.println("动物在奔跑中...");
+    }
+
+    public void setAnimalName(String name) {
+        this.animalName = name;
+    }
+
+    public void getAnimalName() {
+        System.out.println(this.animalName);
     }
 }
