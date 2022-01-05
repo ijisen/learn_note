@@ -26,7 +26,7 @@ rz 上传文件
     rz -y 覆盖上传
 	  
 sz 下载文件
-	se 文件名
+	sz 文件名
 
 tar 解压文件
    tar -xvf node-v14.16.1-linux-x64.tar.xz 
