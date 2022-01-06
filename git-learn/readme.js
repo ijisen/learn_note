@@ -254,6 +254,23 @@ SUMMARY:
 	git fetch --all  
 	git reset --hard origin/master 
 	git pull
+submodule:
+	 // 更新到最新的主分支（例如）： 
+	git submodule foreach git pull origin master
+	// 强制更新到最新代码
+	git submodule update --init --recursive --force
+	// 提取所有最新提交
+	git pull --recurse-submodules
+	
+配置用户信息
+	// 查看用户名
+    git config --global user.name
+	// 删除用户名
+    git config --global --unset user.name
+	// 查看配置邮箱
+    git config --global user.email
+	// 删除配置邮箱 【user.password】
+    git config --global --unset user.email
 
 	
 		
