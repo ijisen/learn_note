@@ -243,9 +243,16 @@ SUMMARY:
 	或
 		git config --system http.sslverify false
 	eg2： error failed to push some refs to 'https://github.com/ijisen/react_learn'
-		git git pull --rebase origin master
+		git pull --rebase origin master
 	eg3： 个人访问令牌
-		创建后， 运行cmd 输入 control 点击windows凭据删除你的git凭据即
+		创建后， 运行cmd 输入 control 点击windows凭据删除你的git凭据即	
+删除本地文件后，想从远程仓库中从新Pull最新版文件。：
+	git reset --hard
+	git pull
+强行pull并覆盖本地文件
+	git fetch --all  
+	git reset --hard origin/master 
+	git pull
 
 	
 		
