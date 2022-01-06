@@ -96,6 +96,7 @@ remote
 		
 push
 	git push <远程主机名> <本地分支名>:<远程分支名>
+	git push origin master
 	
 pull
 	git pull <远程主机名> <远程分支>:<本地分支>  //取回远程分支与本地分支合并
