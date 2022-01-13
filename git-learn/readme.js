@@ -39,6 +39,19 @@ reset
 reflog
 	git reflog //记录每一次操作命令
 	
+branch 分支管理
+   // 查看远程分支
+   git branch -a
+   // 删除远程分支
+   git branch -r -d origin/branch-name
+   // 如果远程新建了一个分支，本地没有该分支。
+   // 这时本地会新建一个分支叫 branch_name ，会自动跟踪远程的同名分支 branch_name。
+   git checkout --track origin/branch_name
+   // 关联本地分支与远程分支
+   git branch --set-upstream-to=origin/<远程分支名> 本地分支名
+   // eg: git branch --set-upstream-to=origin/dev locale-dev
+   // 查看分支关联关系
+    git checkout dev  || git status
 checkout	
 	git checkout -- 1.txt //撤销修改(文本已修改，但还没add/commit到GIT库中)
 	
@@ -99,8 +112,10 @@ push
 	git push origin master
 	
 pull
-	git pull <远程主机名> <远程分支>:<本地分支>  //取回远程分支与本地分支合并
-		git pull origin master   //远程主机名默认 origin  分支 默认 master/branch）
+    //取回远程分支与本地分支合并
+	git pull <远程主机名> <远程分支>:<本地分支>
+	    // 远程主机名默认 origin；取回 origin/master 分支，再与本地的 brantest 分支合并
+		git pull origin master
 		git pull -o JQuery next:master
 	git branch --set-upstream master origin/next //手动建立本地分支与远程分支追踪关系、
 		//如果当前分支与远程分支存在追踪关系，git pull就可以省略远程分支名。
@@ -108,7 +123,7 @@ pull
 		//如果当前分支只有一个追踪分支，连远程主机名都可以省略。
 		git pull
 		
-		//refusing to merge unrelated histories
+	//refusing to merge unrelated histories
 	git pull origin master --allow-unrelated-histories
 	
 	
@@ -255,6 +270,9 @@ SUMMARY:
 	git reset --hard origin/master 
 	git pull
 submodule:
+	git submodule init
+	git submodule update
+
 	 // 更新到最新的主分支（例如）： 
 	git submodule foreach git pull origin master
 	// 强制更新到最新代码
