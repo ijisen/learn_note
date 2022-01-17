@@ -22,8 +22,8 @@
     };
     const element = (
       <div>
-        <Components name="jisen"/>
-        <Components name="jisen" age={25}/>
+        <Components name="jisen" />
+        <Components name="jisen" age={25} />
       </div>
     );
     ReactDOM.render(
@@ -44,7 +44,7 @@
 
     let _name = 'lilei';
     ReactDOM.render(
-      <Components name={_name}/>,
+      <Components name={_name} />,
       document.getElementById('app-es6')
     )
   </script>
@@ -69,15 +69,26 @@
 
     const element = (
       <div>
-        <Name name="jisen"/>
-        <Gender gender={"boy"}/>
-        <NickName nickName="json"/>
+        <Name name="jisen" />
+        <Gender gender={"boy"} />
+        <NickName nickName="json" />
       </div>
     );
     ReactDOM.render(
       element,
       document.getElementById('com-app')
     )
+  </script>
+</div>
+
+<div class="content">
+  <div id="list-app"></div>
+  <script type="text/babel">
+
+    ReactDOM.render(
+      <h1>Hello, world!</h1>,
+      document.getElementById('root')
+    );
   </script>
 </div>
 </body>

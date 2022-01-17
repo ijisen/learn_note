@@ -26,6 +26,30 @@
 <div class="content">
   <div id="root"></div>
   <script type="text/babel">
+    class Button extends React.Component {
+      // props 检查类型 === ts
+      static propTypes = {}
+      // 默认类型
+      static defaultProps = {}
+
+      constructor(props) {
+        super(props);
+        this.state = {}
+      }
+      componentDidUpdate(prevProps, prevState, snapshot) {
+      }
+
+      shouldComponentUpdate(nextProps, nextState, nextContext) {
+      }
+
+      // 会被废弃
+      componentWillMount() {
+      }
+
+      componentDidMount() {
+      }
+    }
+
     const element = <p className="title">this is react</p>;
     ReactDOM.render(
       element,

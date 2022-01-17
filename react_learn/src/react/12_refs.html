@@ -13,26 +13,43 @@
 <div class="content">
   <div id="app"></div>
   <script type="text/babel">
-    class HelloMsg extends  React.Component {
+    class HelloMsg extends React.Component {
       constructor(props) {
         super(props);
         this.state = {
           name: 'Hello Msg'
         };
+        this.myRef = React.createRef();
         this.handleChange = (e) => {
           this.setState({
             name: e.target.value
           })
         };
-        this.handleClick = () => {
-          console.log(this.refs.myInput.value);
-          this.refs.myInput.focus();
-        }
+
       }
-      render () {
+
+      handleClick = () => {
+        console.log(this.myRef)
+        console.log(this.myRef.value);
+        this.myRef.current.focus();
+      }
+
+      componentDidMount() {
+        this.myRef.current.addEventListener('focus', () => {
+          console.log('11111')
+        })
+      }
+
+      componentWillUnmount() {
+        this.myRef.current.removeEventListener('focus', () => {
+          console.log(22222222)
+        })
+      }
+
+      render() {
         return (
           <div>
-            <input ref="myInput" type="text" value={this.state.name} onChange={this.handleChange} />
+            <input ref={this.myRef} type="text" value={this.state.name} onChange={this.handleChange} />
             <p>
               <button onClick={this.handleClick}>点击</button>
             </p>
@@ -40,6 +57,7 @@
         )
       }
     }
+
     ReactDOM.render(
       <HelloMsg />,
       document.getElementById('app')

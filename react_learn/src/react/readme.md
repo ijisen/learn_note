@@ -2,11 +2,15 @@ React学习笔记
 
 ## React
 - React 是一个用于构建用户界面的 JAVASCRIPT 库。
-- React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。
+- React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。
 ## React 特点
-- 声明式设计 −React采用声明范式，可以轻松描述应用。
-- 高效 −React通过对DOM的模拟，最大限度地减少与DOM的交互。
-- 灵活 −React可以与已知的库或框架很好地配合。
+- 声明式设计 − React采用声明式设计，可以轻松描述应用。
+- 高效 − React通过对DOM的模拟，最大限度地减少与DOM的交互。
+- 灵活 − React可以与已知的库或框架很好地配合。
+- 虚拟DOM - Virtual DOM。
+    虚拟DOM可以分为两类
+        DOM元素 DOM element =》 原生DOM元素
+        组件元素 Component element =》自定义组件
 - JSX − JSX 是 JavaScript 语法的扩展。React 开发不一定使用 JSX ，但我们建议使用它。
 - 组件 − 通过 React 构建组件，使得代码更加容易得到复用，能够很好的应用在大项目的开发中。
 - 单向响应的数据流 − React 实现了单向响应的数据流，从而减少了重复代码，这也是它为什么比传统数据绑定更简单。
@@ -17,10 +21,28 @@ React学习笔记
     元素： 构成 React 应用的最小单位
         eg： const react = <h1>hello react</h1>;
     组件：
+        组件声明方式：
+            方式1：React.createClass
+                eg: const Button = React.createClass({})
+            方式2: ES6 classes
+                eg: class Button extends Component {}; 
+            方式3：无状态函数（stateless Function） 官方推荐的
+                eg: const Button = (props) => {}; 
         组件的生命周期：
+            componentWillReceiveProps【17.0 开始废弃】
             Mounting： 已插入真实DOM
+                componentWillMount 组件挂载前【17.0 开始废弃】
+                componentDidMount 组件挂载完成，此时才渲染DOM，获取DOM元素
             Updating： 正在被重新渲染
+                componentWillUpdate【17.0 开始废弃】
+                shouldComponentUpdate
+                componentDidUpdate
             Unmounting：已移除真是DOM
+                componentWillUnmount
+                componentDidUnmount
+        组件间通信：
+            利用回调函数
+            利用自定义事件机制
     State(状态)：
         React 把组件看成是一个状态机（State Machines）。通过与用户的交互，实现不同状态，然后渲染 UI，让用户界面和数据保持一致。
         React 里，只需更新组件的 state，然后根据新的 state 重新渲染用户界面（不要操作 DOM）。
@@ -52,3 +74,9 @@ React学习笔记
         替换状态：replaceState(object nextState[, function callback])
             nextState，将要设置的新状态，该状态会替换当前的state。
             callback，可选参数，回调函数。该函数会在replaceState设置成功，且组件重新渲染后调用。
+    class命名技巧：
+        BEM规范:
+            BLOCK: 对应模块名称：Dialog
+            ELEMENT: 对应模块中的节点名称： button
+            MODIFIER: 对应节点的状态： disabled || show || highlight
+            eg: dialog__button--highlight

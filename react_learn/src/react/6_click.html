@@ -24,6 +24,7 @@
         };
 
         // 这边绑定是必要的，这样 `this` 才能在回调函数中使用
+        // 构造器内声明
         this.handleClick = this.handleClicked.bind(this);
         this.changeName = () => {
           this.setState((prevState, prevProps) => {
@@ -35,8 +36,9 @@
           })
         }
       }
+
       // 需要绑定 this 指向
-      handleClicked () {
+      handleClicked() {
         /* this.setState(prevState => ({    // 这个参数
            isToggleOn: !prevState.isToggleOn
          }));*/
@@ -49,8 +51,10 @@
           }
         });
       };
-      // 不需要绑定 this 指向
+
+      // 箭头函数，不需要绑定 this 指向
       changeAge = (age, e) => {
+        e.preventDefault();
         console.log(age);
         this.setState((prevState) => {
           prevState.age++;
@@ -65,19 +69,21 @@
       render() {
         return (
           <div>
-            <button onClick={this.handleClick}>
-              {this.state.isToggleOn ? 'ON' : 'OFF'}
-            </button>
-            <span className="pll" onClick={this.changeName}>{ this.state.name }</span>
-            {/* 向事件处理程序传递参数 */}
-            <span className="pll" onClick={this.changeAge.bind(this, 10)}>{ this.state.age }</span>
-            {/* 向事件处理程序传递参数 */}
+            {/** 构造器内声明 */}
+            <button onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
+            <span className="pll" onClick={this.changeName}>{this.state.name}</span>
+            {/** 通过bind方法实现 => 向事件处理程序传递参数 */}
+            <span className="pll" onClick={this.changeAge.bind(this, 10)}>{this.state.age}</span>
+            {/** 向事件处理程序传递参数 */}
             {/* 如果该回调函数作为 prop 传入子组件时，这些组件可能会进行额外的重新渲染 */}
-            <span className="pll" onClick={(e) => {this.changeAge(20, e)}}>{ this.state.age }</span>
+            <span className="pll" onClick={(e) => {
+              this.changeAge(20, e)
+            }}>{this.state.age}</span>
           </div>
         );
       }
     }
+
     ReactDOM.render(
       <Toggle />,
       document.getElementById('app')
