@@ -123,7 +123,9 @@ push
 pull
     //取回远程分支与本地分支合并
 	git pull <远程主机名> <远程分支>:<本地分支>
-	    // 远程主机名默认 origin；取回 origin/master 分支，再与本地的 brantest 分支合并
+	    // 将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并。
+		git pull origin master:brantest
+		// 如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
 		git pull origin master
 		git pull -o JQuery next:master
 	git branch --set-upstream master origin/next //手动建立本地分支与远程分支追踪关系、
