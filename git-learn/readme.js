@@ -299,4 +299,8 @@ submodule:
 	// 查看配置邮箱
     git config --global user.email
 	// 删除配置邮箱 【user.password】
-    git config --global --unset user.email
+    git config --global --unset user.email、
+查看远程分支信息 
+	git remote show origin
+	// 删除失效的远程分支
+	git remote prune origin
