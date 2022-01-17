@@ -7,11 +7,11 @@ git config --global user.email "email@example.com"
 
 init
 	git init  //进入项目目录，把这个目录变成Git可以管理的仓库
-add 
+add 【添加文件至缓存区】
 	git add <file>   // git add 1.txt 2.txt  添加文件到暂存区
 	git add *.txt  // git add 1.txt 2.txt  添加文件到暂存区
 	git add -A/--all  // 添加目录下所有文件到暂存区
-commit 
+commit 【将暂存区内容添加到本地仓库中 => 版本库或本地仓库】
 	git commit -m "message"   // 提交文件到Git仓库， -m "修改说明"  命令1
 	git commit -a/--all -m "message"   // 提交所有文件到Git仓库， -m "修改说明" 命令2
 	git commit readme.txt -m "message"   // 提交指定文件到Git仓库" 命令3
@@ -22,8 +22,17 @@ status
 	git status readme.txt //查看指定文件状态
 	
 diff
-	git diff readme.txt //当前未提交文件修改内容对比
-	
+	尚未缓存的改动：git diff
+	查看已缓存的改动： git diff --cached
+	查看已缓存的与未缓存的所有改动：git diff HEAD
+	显示摘要而非整个 diff：git diff --stat
+	git diff readme.txt //显示暂存区和工作区的差异:
+	// 显示暂存区和上一次提交(commit)的差异:
+	git diff --cached [file]
+	// 或
+	git diff --staged [file]
+	// 显示两次提交之间的差异:
+	git diff [first-branch]...[second-branch]
 log
 	git log  //查看所有文件修改日志
 	git log readme.txt //查看指定文件修改日志
