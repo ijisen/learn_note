@@ -19,11 +19,11 @@ JSON字符集必须是UTF-8，JSON的字符串规定必须用双引号""，Objec
 	};
 	JSON.stringify(xiaoming); // '{"name":"小明","age":14,"gender":true,"height":1.65,"grade":null,"middle-school":"\"W3C\" Middle School","skills":["JavaScript","Java","Python","Lisp"]}'
 	//缩进输出
-	JSON.stringify(xiaoming, null, '  '); 
+	JSON.stringify(xiaoming, null, '  ');
 
 	//筛选对象的键值，只输出指定的属性
 	JSON.stringify(xiaoming, ['name', 'skills'], '  ');
-	{
+	const json_a = {
 	  "name": "小明",
 	  "skills": [
 		"JavaScript",
@@ -44,7 +44,7 @@ JSON字符集必须是UTF-8，JSON的字符串规定必须用双引号""，Objec
 
 	JSON.stringify(xiaoming, convert, '  ');
 
-	{
+const json_b = {
 	  "name": "小明",
 	  "age": 14,
 	  "gender": true,
@@ -88,7 +88,7 @@ JSON字符集必须是UTF-8，JSON的字符串规定必须用双引号""，Objec
 	JSON.parse('{"name":"小明","age":14}'); // Object {name: '小明', age: 14}
 	JSON.parse('true'); // true
 	JSON.parse('123.45'); // 123.45
-	
+
 	//JSON.parse()还可以接收一个函数，用来转换解析出的属性
 	JSON.parse('{"name":"小明","age":14}', function (key, value) {
 		// 把number * 2:
