@@ -13,53 +13,59 @@
 <div class="content">
   <div id="app"></div>
   <script type="text/babel">
-    class HelloMsg extends React.Component {
+    const SetIntervalMixin = {
+      componentWillMount: function () {
+        this.intervals = [];
+      },
+      setInterval: function () {
+        this.intervals.push(setInterval.apply(null, arguments));
+      },
+      componentWillUnmount: function () {
+        this.intervals.forEach(clearInterval);
+      }
+    };
+    const TickLock = () => ({
+      mixins: [SetIntervalMixin], // 使用 mixin
+      getInitialState: function () {
+        return { seconds: 0 };
+      },
+      componentDidMount: function () {
+        this.setInterval(this.tick, 1000); // 调用 mixin 上的方法
+      },
+      tick: function () {
+        this.setState({ seconds: this.state.seconds + 1 });
+      },
+      render: function () {
+        return (
+          <p>
+            React has been running for {this.state.seconds} seconds.
+          </p>
+        );
+      }
+    });
+
+
+    class DemoFirst extends React.Component {
+      // mixins: [SetIntervalMixin], // 使用 mixin
+
       constructor(props) {
         super(props);
         this.state = {
-          name: 'Hello Msg'
+          title: 'Demo First'
         };
-        this.myRef = React.createRef();
-        this.handleChange = (e) => {
-          this.setState({
-            name: e.target.value
-          })
-        };
-
-      }
-
-      handleClick = () => {
-        console.log(this.myRef)
-        console.log(this.myRef.value);
-        this.myRef.current.focus();
       }
 
       componentDidMount() {
-        this.myRef.current.addEventListener('focus', () => {
-          console.log('11111')
-        })
-      }
-
-      componentWillUnmount() {
-        this.myRef.current.removeEventListener('focus', () => {
-          console.log(22222222)
-        })
+        // this.handlePageInit();
       }
 
       render() {
-        return (
-          <div>
-            <input ref={this.myRef} type="text" value={this.state.name} onChange={this.handleChange} />
-            <p>
-              <button onClick={this.handleClick}>点击</button>
-            </p>
-          </div>
-        )
+        return (<h1>{this.state.title}</h1>)
       }
     }
 
     ReactDOM.render(
-      <HelloMsg />,
+      <DemoFirst />,
       document.getElementById('app')
     )
   </script>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React 组件再分离</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+  <style>
+      .isActive {
+          border-color: #4cae4c;
+      }
+  </style>
+</head>
+<body>
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    /**
+     * 组件再分离
+     *  SELECT
+     *  SEARCH
+     *  SEARCH_SELECT
+     * hocFactory:: W: React.Component => E: React.Component
+     * 优点：
+     * ===》 1、复用性、逻辑性、抽象特性
+     * ===》 2、可以对render方法劫持，也可以控制props和state
+     * 实现高阶组件的方法：
+     * ===》 属性代理（props proxy）: 高阶组件通过被包裹的React组件来操作props
+     * ===》 反向继承（inheritance inversion）: 高阶组件继承宇被包裹的React组件
+     *      反向继承特点：
+     *      1、 渲染劫持
+     *      2、 控制State
+     *
+     * */
+    /** 完成 SearchInput 与 List交互 */
+    const searchDecorator = WrapperComponent => {
+      class SearchDecorator extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            data: {},
+            keyword: ''
+          }
+          this.handleSearch = this.handleSearch.bind(this);
+        }
+
+        handleSearch(keyword) {
+          const { onSearch, data } = this.props;
+          this.setState({
+            data: data,
+            keyword
+          });
+          onSearch && onSearch(keyword);
+        }
+
+        render() {
+          const { data, keyword } = this.state;
+          return (
+            <WrapperComponent {...this.props}
+                              data={data}
+                              keyword={keyword} onSearch={this.handleSearch} />
+          )
+        }
+      }
+
+      return SearchDecorator
+    }
+
+    /** 完成 LISt 数据请求 */
+    const asyncSelectDecorator = WrapperComponent => {
+      class AsyncSelectDecorator extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            data: {}
+          }
+        }
+
+        componentDidMount() {
+          const { url, params } = this.props;
+          console.log('请求数据')
+        }
+
+        render() {
+          return (
+            <WrapperComponent {...this.props} data={this.state.data} />
+          )
+        }
+      }
+
+      return AsyncSelectDecorator
+    }
+
+    /** 组合嵌套 */
+    const FinalSelector= React.compose(asyncSelectDecorator, searchDecorator)
+
+    /** SelectInput */
+    class SelectInput extends React.Component {
+      static displayName = 'SelectInput';
+
+      render() {
+        const { selectItem, isActive, onClickHeader, placeholder } = this.props;
+        const { text = '' } = selectItem || {};
+        return (
+          <div>
+            <div onClick={onClickHeader}>
+              <input type="text" disabled value={text} placeholder={placeholder} className={isActive} />
+            </div>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <SelectInput />,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+</body>
+</html>

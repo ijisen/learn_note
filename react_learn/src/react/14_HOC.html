@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>React 高阶函数</title>
+  <link rel="stylesheet" href="../assets/css/css.css">
+  <script src="../assets/js/react.production.min.js"></script>
+  <script src="../assets/js/react-dom.production.min.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <script src="../assets/js/babel.min.js"></script>
+</head>
+<body>
+<div class="content">
+  <div id="app"></div>
+  <script type="text/babel">
+    /**
+     * 高阶组件 HIGHER-ORDER COMPONENT
+     * 接收React组件作为输入，输出一个新的React组件
+     * hocFactory:: W: React.Component => E: React.Component
+     * 优点：
+     * ===》 1、复用性、逻辑性、抽象特性
+     * ===》 2、可以对render方法劫持，也可以控制props和state
+     * 实现高阶组件的方法：
+     * ===》 属性代理（props proxy）: 高阶组件通过被包裹的React组件来操作props
+     * ===》 反向继承（inheritance inversion）: 高阶组件继承宇被包裹的React组件
+     *      反向继承特点：
+     *      1、 渲染劫持
+     *      2、 控制State
+     *
+     * */
+    /** 属性代理 props proxy */
+    const PropsProxyComponent = (HigherComponent) => {
+      return class extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            title: 'PropsProxy',
+            page: 0,
+            name: props.name
+          }
+          this.handleNameChange = this.handleNameChange.bind(this);
+        }
+
+        handlePageChange = (e) => {
+          const { target = { value: "" } } = e || {};
+          console.log(this.state)
+          this.setState({
+            page: target.value
+          });
+          console.log('handlePageChange')
+        }
+
+        handleNameChange(e) {
+          const { target = { value: "" } } = e || {}
+          this.setState({
+            name: target.value
+          })
+          console.log('handleNameChange')
+        }
+
+        render() {
+          const newProps = {
+            userName: {
+              value: this.state.name,
+              onChange: this.handleNameChange
+            },
+            page: {
+              value: this.state.page,
+              onChange: this.handlePageChange
+            }
+          }
+          return <HigherComponent {...this.props} {...newProps} />
+        }
+      }
+    }
+
+    /** 子组件 */
+    class ChildComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          title: 'MyComponent'
+        }
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>我是子组件Title： {this.state.title}</h1>
+            <h1>我是传入的Title： {this.props.title}</h1>
+            <input name="userName" {...this.props.userName} />
+            <input name="page" {...this.props.page} />
+          </div>
+        )
+      }
+    }
+
+    class HelloMsg extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          title: 'HelloMsg'
+        }
+      }
+
+      render() {
+        const BlogPostWithSubscription = PropsProxyComponent(ChildComponent)
+        return (
+          <div>
+            <h1>React Mixins</h1>
+            <BlogPostWithSubscription title={this.state.title} name="王梅" />
+            <BlogPostWithSubscription title={this.state.title} name="刘东" />
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <HelloMsg />,
+      document.getElementById('app')
+    )
+  </script>
+</div>
+
+<div class="content">
+  <div id="app-inherit"></div>
+  <script type="text/babel">
+    /** 反向继承
+     * 高阶组件返回的组件继承于 HigherComponent
+     * */
+    const inheritanceInversion = (HigherComponent) => {
+      return class extends HigherComponent {
+        constructor(props) {
+          super(props);
+        }
+
+        render() {
+          console.log(this.props)
+          const { login } = this.props;
+          if (login) {
+            return super.render();
+          }
+          return <h1>未登录</h1>
+        }
+      }
+    }
+
+    /** 子组件 */
+    class ChildComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          title: 'MyComponent'
+        }
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>我是子组件Title： {this.state.title}</h1>
+            <h1>我是传入的Title： {this.props.title} - {this.props.name}</h1>
+          </div>
+        )
+      }
+    }
+
+    class HelloMsg extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          title: 'HelloMsg'
+        }
+      }
+
+      render() {
+        const BlogPostWithSubscription = inheritanceInversion(ChildComponent)
+        return (
+          <div>
+            <h1>React Mixins</h1>
+            <BlogPostWithSubscription title={this.state.title} name="王梅" login={true} />
+            <BlogPostWithSubscription title={this.state.title} name="刘东" />
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <HelloMsg />,
+      document.getElementById('app-inherit')
+    )
+  </script>
+</div>
+</body>
+</html>
