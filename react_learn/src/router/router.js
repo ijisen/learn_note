@@ -5,6 +5,10 @@ import DomainTrIn from '../pages/dpp/DomainTrIn';
 
 import TodoList from '../pages/todo-list';
 
+// React 学习笔记
+import ReactComponent from '../pages/react';
+import Context from '../pages/react/context/index';
+
 // redux 学习笔记
 import Redux from '../pages/redux';
 import CreateStore from '../pages/redux/create-store';
@@ -14,6 +18,7 @@ import ErrorBoundary from '../pages/errorBoundary'
 import Demo from '../pages/demo';
 import ES5 from '../pages/demo/children/es5';
 import ES6 from '../pages/demo/children/es6';
+import Hook from '../pages/demo/children/hook/index';
 
 // 用户登录||注册
 import User from '../pages/user';
@@ -113,6 +118,37 @@ export default [
         }
       },
       {
+        name: 'React',
+        path: '/react',
+        component: ReactComponent,
+        meta: {
+          type: 'pageRoute',
+          icon: 'slack',
+          desc: 'redux'
+        },
+        routes: [
+          {
+            name: '',
+            path: '/react',
+            exact: true,
+            redirect: '/react/context',
+            meta: {
+              type: 'redirect'
+            }
+          },
+          {
+            name: 'Context',
+            path: '/react/context',
+            component: Context,
+            meta: {
+              type: 'page',
+              requireAuth: false,
+              icon: 'slack'
+            }
+          },
+        ]
+      },
+      {
         name: 'Redux',
         path: '/redux',
         component: Redux,
@@ -186,6 +222,16 @@ export default [
             name: 'ES6',
             path: '/demo/es6',
             component: ES6,
+            meta: {
+              type: 'page',
+              requireAuth: false,
+              icon: 'vertical-align-bottom'
+            }
+          },
+          {
+            name: 'Hook',
+            path: '/demo/hook',
+            component: Hook,
             meta: {
               type: 'page',
               requireAuth: false,
