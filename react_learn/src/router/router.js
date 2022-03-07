@@ -146,6 +146,16 @@ export default [
               icon: 'slack'
             }
           },
+          {
+            name: 'Hook',
+            path: '/react/hook',
+            component: Hook,
+            meta: {
+              type: 'page',
+              requireAuth: false,
+              icon: 'vertical-align-bottom'
+            }
+          }
         ]
       },
       {
@@ -228,16 +238,6 @@ export default [
               icon: 'vertical-align-bottom'
             }
           },
-          {
-            name: 'Hook',
-            path: '/demo/hook',
-            component: Hook,
-            meta: {
-              type: 'page',
-              requireAuth: false,
-              icon: 'vertical-align-bottom'
-            }
-          }
         ]
       },
       {
@@ -259,8 +259,8 @@ export default [
         }
       },
       {
-        name: 'hook',
-        path: '/hook',
+        name: 'customHook',
+        path: '/customHook',
         component:  require('../pages/customHook').default,
         meta: {
           type: 'page',

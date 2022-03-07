@@ -17,6 +17,12 @@ commit 【将暂存区内容添加到本地仓库中 => 版本库或本地仓库
 	git commit readme.txt -m "message"   // 提交指定文件到Git仓库" 命令3
 	ps： 目录文件已经加入到git仓库时，当修改文件用命令2、命令3时，不需要再用add命令
 	ps： 当修改文件用命令1时，需要先用add命令才能从暂存区提交到当前分支
+
+作者：沐风雨木
+链接：https://www.jianshu.com/p/199f584e5c50
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
 status
 	git status //当前仓库的状态，是否有未提交的任务
 	git status readme.txt //查看指定文件状态
@@ -37,13 +43,29 @@ log
 	git log  //查看所有文件修改日志
 	git log readme.txt //查看指定文件修改日志
 	git log --pretty=oneline readme.txt //输出内容不换行
+	// git查看历史提交修改了哪些文件
+	git log --stat
+	// 限制显示历史提交的次数
+	git log --stat -<number> 
+	eg: git log --stat -1  // 最近一次的提交记录
+commit show:
+    // 查看指定commit hashID的所有修改
+	git show commitId
+    // 查看某次commit中具体某个文件的修改
+	git show commitId fileName
 	
 reset
+	git reset --soft|--mixed|--hard <commit_id>
+	// commit_id 要退回的版本
+	// --mixed 保留源码，只是将 git commit 和 index 信息回退到了某个版本。
+	// --soft  保留源码，只回退到 commit 信息到某个版本.不涉及 index 的回退,如果还需要提交,直接 commit 即可。
+	// --hard 源码也会回退到某个版本, commit 和 index 都会回退到某个版本(注意，这种方式是改变本地代码仓库源码)。
+	
 	git reset --hard HEAD^    //回到上一个版本（window下： HEAD"^"）
 	git reset --hard HEAD^^   //回到上上一个版本
 	git reset --hard HEAD~100 //回到第一百个版本
 	git reset --hard ID       //回到某一指定ID版本
-	git reset HEAD 1.txt  //清除暂存区的内容
+	git reset HEAD 1.txt  //清除暂存区的内容	
 	
 reflog
 	git reflog //记录每一次操作命令
@@ -274,6 +296,7 @@ SUMMARY:
 	eg3： 个人访问令牌
 		创建后， 运行cmd 输入 control 点击windows凭据删除你的git凭据即	
 删除本地文件后，想从远程仓库中从新Pull最新版文件。：
+    ps： 此命令会撤销本地为push的commit记录
 	git reset --hard
 	git pull
 强行pull并覆盖本地文件

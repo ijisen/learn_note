@@ -17,6 +17,7 @@ import {
 import UseStateComponent from "./component/UseState"
 import UseReducerComponent from "./component/UseReducer"
 import UseContextComponent from "./component/UseContext"
+import UseMemoComponent from "./component/UseMemo"
 
 const Example = () => {
 
@@ -40,6 +41,9 @@ const Example = () => {
         </Col>
         <Col>
           <UseContextComponent />
+        </Col>
+        <Col>
+          <UseMemoComponent />
         </Col>
       </Row>
     </Card>

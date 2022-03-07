@@ -65,7 +65,7 @@ const Example = () => {
 
   const { age, name } = formData;
   return (
-    <Card title="useReducer" bordered={false} style={{ width: 500 }}>
+    <Card title="useReducer" style={{ width: 500, marginTop: 10 }}>
       <div style={{ marginBottom: 10 }}>
         <Text type="success">Hello {name}; Your {age} times;</Text>
         <div style={{ marginTop: 10 }}>

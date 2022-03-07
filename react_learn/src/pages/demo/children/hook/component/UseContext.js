@@ -39,7 +39,7 @@ const Example = () => {
   }
   return (
     <ThemeContext.Provider value={themes[theme]}>
-      <Card title="UseContext" bordered={false} style={{ width: 500 }}>
+      <Card title="UseContext" bordered={true} style={{ width: 500, marginTop: 10 }}>
         <Button style={{marginBottom: 10}} onClick={handleChangeTheme}>切换主题</Button>
         <ThemeButton />
       </Card>
