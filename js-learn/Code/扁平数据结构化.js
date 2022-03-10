@@ -16,6 +16,7 @@ const arrayToTree = (data) => {
       ...item,
       children: itemMap[id] ? itemMap[id].children : []
     };
+
     const treeItem = itemMap[id];
 
     if (pid === 0) {

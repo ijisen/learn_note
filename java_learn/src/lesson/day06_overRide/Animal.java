@@ -1,4 +1,4 @@
-package lesson.day06_override;
+package lesson.day06_overRide;
 
 public class Animal {
     public void move() {

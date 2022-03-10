@@ -30,12 +30,12 @@ public class Index {
         Animal a = new Cat();
         // 猫儿在捉老鼠...
         a.run();
-        a.setAnimalName("ANIMAL");
+        a.setAnimalName("VAT");
         a.getAnimalName();
         // Animal 中没有 getFeature 方法，编译会报错：
         // a.getFeature();
-        // Animal 中没有 getFeature 方法，编译会报错：
-        // a.setName("CAT");
+        // Animal 中没有 setCatName 方法，编译会报错：
+        // a.setCatName("CAT");
 
         /**
          * 向下转型【downcasting 强制转换 】
@@ -52,12 +52,16 @@ public class Index {
         // 向下转型   downCasting 强制转换
         // 猫儿有四条腿...
         if (a instanceof Cat) {
+            // 向下转型【强制转换】
             Cat a2 = (Cat) a;
+            a2.getFeature();
+            a2.setCatName("Tom");
+            a2.getName();
             // ANIMAL
             a.getAnimalName();
-            a2.getFeature();
-            a2.setName("CAT");
-            a2.getName();
+            a2.seAnimalName("TIMI");
+            // TIMI
+            a.getAnimalName();
         } else if (a instanceof Bird) {
             Bird a2 = (Bird) a;
             a2.fly();
