@@ -1,3 +1,5 @@
+package method;
+
 /**
  * java 中叫方法， 不叫函数
  * -- 方法必须定义在类当中， 方法定义顺序没有先后顺序
@@ -50,7 +52,7 @@ public class Method {
 class MethodOverload {
     public static void main(String[] args) {
         System.out.println(sum(1, 2));
-        System.out.println(sum(1.2, 2.4));
+        System.out.println(sum(1.20, 2.40));
     }
 
     public static int sum(int a, int b) {
@@ -58,7 +60,7 @@ class MethodOverload {
         return a + b;
     }
 
-    public static float sum(float a, float b) {
+    public static double sum(double a, double b) {
         System.out.println("sum int");
         return a + b;
     }
