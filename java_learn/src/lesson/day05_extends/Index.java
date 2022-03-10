@@ -16,6 +16,8 @@ public class Index {
         CreditExtendsAccount credit = new CreditExtendsAccount("789789456456", 9999.85, 88);
         System.out.println(credit.getCredit());
         System.out.println(credit.getBalance());
+        credit.setBalance(10);
+        System.out.println(credit.getBalance());
         System.out.println(credit.getNo());
     }
 }
