@@ -1,9 +1,10 @@
+package lesson.day07_recursion;
 /**
  * 递归 recursion
  * 递归容易造成栈内存泄漏
  */
 
-public class Recursion {
+public class test01_recursion_sum_01 {
     public static void main(String[] args) {
         System.out.println("11111");
         System.out.println(count(10));

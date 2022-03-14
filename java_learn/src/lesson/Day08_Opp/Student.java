@@ -1,3 +1,5 @@
+package lesson.day08_opp;
+
 /**
  * 定义一个Student类
  */
@@ -16,5 +18,5 @@ public class Student {
     // age
     int age;
     // address
-    Address addr;
+    Addr addr;
 }

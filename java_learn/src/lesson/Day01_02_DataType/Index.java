@@ -1,3 +1,5 @@
+package lesson.day01_02_dataType;
+
 /**
  * 数据类型
  * 申明不同的数据类型，分配的空间不一样
@@ -21,7 +23,7 @@
  * 接口
  * 数组
  */
-public class DataType {
+public class Index {
     // 成员变量申明后可以不赋值
     static int e;
 

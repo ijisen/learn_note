@@ -1,3 +1,5 @@
+package lesson.day08_opp;
+
 public class House {
     // 面积
     int area;

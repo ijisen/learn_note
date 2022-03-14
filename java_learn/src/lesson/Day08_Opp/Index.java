@@ -1,6 +1,9 @@
+package lesson.day08_opp;
+
 /**
  * 面向对象分析【OOA】【Procedure-Oriented Analysis】
  * 面向对象设计【OOD】【Procedure-Oriented Design】
+ * 面向对象编程【OOP】【Procedure-Oriented Programming】
  * 面向过程【Procedure-Oriented Programming】 POP
  * ---> 优点：性能比面向对象好，因为类调用时需要实例化，开销比较大，比较消耗资源。
  * ---> 缺点：不易维护、不易复用、不易扩展.
@@ -24,7 +27,7 @@
  * ---------> 设计时采用多个与特定客户类有关的接口比采用一个通用的接口要好。就比如一个手机拥有打电话，看视频，玩游戏等功能，把这几个功能拆分成不同的接口，比在一个接口里要好的多。
  * 对象【实例】
  */
-public class OppIndex {
+public class Index {
     public static void main(String[] args) {
 
     }

@@ -1,7 +1,9 @@
+package lesson.Day02_02_AssignmentOperation;
+
 /**
  * 赋值运算
  */
-public class AssignmentOperation {
+public class Index {
     public static void main(String[] arg) {
         // 定义一个 String 类型的变量， 起名 userName， 赋值 Hmm
         String userName = "Hmm";

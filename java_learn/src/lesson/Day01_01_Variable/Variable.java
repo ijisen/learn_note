@@ -1,3 +1,5 @@
+package lesson.Day01_01_Variable;
+
 /**
  * 变量
  * 变量名[标识符]： 数字 字母 下划线 $
