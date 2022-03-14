@@ -1,6 +1,6 @@
-package lesson.Day08_Opp;
+package lesson.Day08_Opp.Test_01_Student;
 
-public class Test01 {
+public class Index {
     public static void main(String[] args) {
         // 在类加载的时候
         Student u = new Student();

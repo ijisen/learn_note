@@ -1,4 +1,4 @@
-package lesson.Day01_01_Variable;
+package lesson.Day01_02_Variable;
 
 /**
  * 变量
@@ -15,7 +15,7 @@ public class Variable {
      * byte,short,0,0
      * float，double: 0.0
      * boolean: false
-     * chart: \u000
+     * chart: \u0000
      * */
     static int id = 0;
     // 成员变量 静态属性
