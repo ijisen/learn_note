@@ -1,4 +1,4 @@
-package lesson.day07_recursion;
+package lesson.Day07_Recursion;
 
 /**
  * 递归求和实例

@@ -1,4 +1,4 @@
-package lesson.day07_polymorphic.demo;
+package lesson.Day07_Polymorphic.demo;
 
 public class Dog extends Pet {
     @Override

@@ -1,4 +1,4 @@
-package lesson.day02_class;
+package lesson.Day02_Class;
 
 /**
  * 面项对象三大特征

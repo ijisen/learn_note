@@ -1,4 +1,4 @@
-package lesson.day04_static;
+package lesson.Day04_Static;
 
 public class ChineseTest {
     public static void main(String args[]) {

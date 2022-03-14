@@ -1,4 +1,4 @@
-package lesson.day01_02_dataType;
+package lesson.Day01_02_DataType;
 
 /**
  * 数据类型

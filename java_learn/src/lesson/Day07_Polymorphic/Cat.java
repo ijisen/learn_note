@@ -1,4 +1,4 @@
-package lesson.day07_polymorphic;
+package lesson.Day07_Polymorphic;
 
 public class Cat extends Animal {
     String name;

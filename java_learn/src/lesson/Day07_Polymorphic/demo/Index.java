@@ -1,4 +1,4 @@
-package lesson.day07_polymorphic.demo;
+package lesson.Day07_Polymorphic.demo;
 
 /**
  * 多态应用场景（polymorphic）

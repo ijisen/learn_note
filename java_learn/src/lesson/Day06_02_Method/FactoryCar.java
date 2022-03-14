@@ -1,4 +1,4 @@
-package method;
+package lesson.Day06_02_Method;
 
 /**
  * 汽车工厂

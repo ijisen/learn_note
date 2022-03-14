@@ -1,4 +1,4 @@
-package lesson.day08_opp;
+package lesson.Day08_Opp;
 
 public class Test01 {
     public static void main(String[] args) {

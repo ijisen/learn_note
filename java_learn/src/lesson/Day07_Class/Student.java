@@ -1,4 +1,4 @@
-package lesson.day07_class;
+package lesson.Day07_Class;
 /**
  *
  * 学生类

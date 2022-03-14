@@ -1,4 +1,4 @@
-package lesson.day08_opp;
+package lesson.Day08_Opp;
 
 /**
  * 定义一个Student类

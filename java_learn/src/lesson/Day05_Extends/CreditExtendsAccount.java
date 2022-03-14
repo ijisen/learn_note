@@ -1,4 +1,4 @@
-package lesson.day05_extends;
+package lesson.Day05_Extends;
 
 public class CreditExtendsAccount extends Account {
     // 信用

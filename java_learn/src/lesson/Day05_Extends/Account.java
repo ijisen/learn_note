@@ -1,4 +1,4 @@
-package lesson.day05_extends;
+package lesson.Day05_Extends;
 
 public class Account {
     // 私有属性不会被继承，只能通过set、get方法读取

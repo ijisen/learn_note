@@ -1,4 +1,4 @@
-package lesson.day03_this;
+package lesson.Day03_This;
 
 public class CustomerTest {
     public static void main(String args[]) {

@@ -1,4 +1,4 @@
-package lesson.day04_static;
+package lesson.Day04_Static;
 /**
  * 静态变量在类加载的时候初始化，内存在方法区中开辟，访问的时候不需要创建对象，
  * 直接使用“类名.静态变量名”的方式访问

@@ -1,4 +1,4 @@
-package method;
+package lesson.Day06_02_Method;
 
 /**
  * java 中叫方法， 不叫函数

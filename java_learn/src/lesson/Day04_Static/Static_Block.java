@@ -1,4 +1,4 @@
-package lesson.day04_static;
+package lesson.Day04_Static;
 
 /**
  * 静态代码块

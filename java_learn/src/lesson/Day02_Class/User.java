@@ -1,4 +1,4 @@
-package lesson.day02_class;
+package lesson.Day02_Class;
 
 /**
  * getter & setter 没有 static 修饰方法

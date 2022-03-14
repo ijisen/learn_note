@@ -1,4 +1,4 @@
-package lesson.day07_polymorphic;
+package lesson.Day07_Polymorphic;
 
 public class Animal {
     String animalName;
