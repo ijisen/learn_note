@@ -1,4 +1,4 @@
-package lesson.Day08_Opp.Test_06_Package;
+package lesson.Day08_Opp.Test_07_Package;
 
 /**
  * 创建一个 用户对象
