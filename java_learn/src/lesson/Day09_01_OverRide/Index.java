@@ -1,4 +1,4 @@
-package lesson.Day06_00_OverRide;
+package lesson.Day09_01_OverRide;
 
 /**
  * 方法重写（方法覆盖） override
@@ -11,6 +11,7 @@ package lesson.Day06_00_OverRide;
  * ​  3，父类成员的方法只能被它的子类重写。
  * ​  4，被final修饰的方法不能被重写。
  * ​  5，构造方法不能
+ * ​  6，返回值得一样
  * Super 关键字的使用
  *   当需要在子类中调用父类的被重写方法时，要使用 super 关键字。
  * 【重写与重载之间的区别】
@@ -25,12 +26,4 @@ package lesson.Day06_00_OverRide;
  *     (3)方法重载是一个类的多态性表现,而方法重写是子类与父类的一种多态性表现。
  */
 public class Index {
-    public static void main(String[] args) {
-        // 鸟需要飞行
-        Bird bird = new Bird();
-        bird.move();
-        // 猫可以爬行
-        Cat cat = new Cat();
-        cat.move();
-    }
 }

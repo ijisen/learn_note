@@ -1,4 +1,4 @@
-package lesson.Day02_Class;
+package lesson.Day07_Class.Test_01_User;
 
 /**
  * 面项对象三大特征
@@ -6,7 +6,7 @@ package lesson.Day02_Class;
  * 继承
  * 多态
  */
-public class UserTest {
+public class Index {
     public static void main(String[] args) {
         User user = new User();
         User user1 = new User(100);
