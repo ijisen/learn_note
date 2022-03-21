@@ -1,4 +1,4 @@
-package lesson.Day08_03_Static;
+package lesson.Day08_04_Static_Block;
 
 /**
  * 静态代码块
@@ -10,10 +10,10 @@ package lesson.Day08_03_Static;
  * 静态代码块的作用
  * --> 1、 程序执行前需要加载的东西，eg： 调用日志、初始化连接池、解析XML配置文件
  */
-public class Static_Block {
+public class Index {
     // 构造函数
-    public Static_Block() {
-        System.out.println("Static_Block");
+    public Index() {
+        System.out.println("Index");
     }
 
     // 静态代码块
@@ -40,7 +40,7 @@ public class Static_Block {
     public static void main(String[] arg) {
         System.out.println("main ");
         // 构造函数执行一次， 实例代码块就执行一次
-        new Static_Block();
-        new Static_Block();
+        new Index();
+        new Index();
     }
 }
