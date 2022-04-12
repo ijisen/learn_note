@@ -8,6 +8,6 @@ public class Cat extends Animal {
     }
 
     public void eat() {
-        System.out.println("猫儿爱吃鱼。。。");
+        System.out.println("猫儿爱吃鱼...");
     }
 }

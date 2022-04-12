@@ -17,7 +17,6 @@ public class Index {
         Animal a = new Animal();
         // 动物在减肥...
         a.run();
-        ;
 
         Cat cat = new Cat();
         // 猫儿在散步...
@@ -45,11 +44,53 @@ public class Index {
          * 5、父类型引用指向子类型对象这种机制导致程序存在编译阶段绑定和运行阶段绑定两种不同的形态，
          * 这种机制称为多态语法机制。
          * */
-        Animal cat2 = new Cat();
+        Animal animal2 = new Cat();
         // 猫儿在散步...
-        cat2.run();
+        animal2.run();
         // Animal中 找不到符eat方法， 静态编译阶段会报错;
         // cat2.eat();
+        /**
+         * 向下转型【downcasting】强制转换
+         * 1、 转换条件：
+         * ----》强制类型转换，类型之间必须有继承关系，否正编译会报错
+         * 2、 时候使用？
+         * ----》 当调用的方法是字类特有的，在父类中不存在，必须向下转型
+         *
+         *
+         * */
         // 这时就需要向下转型【downcasting】强制转换
+        // 强制转换符： (Cat) animal2 ； 将 animal2 强制换成 Cat类型
+        // 猫儿爱吃鱼...
+        ((Cat) animal2).eat();
+        // or
+        // 强制转换符： (Cat) animal2
+        Cat cat3 = (Cat) animal2;
+        cat3.eat();
+
+        /**
+         * Cat 和 Bird 之间没有继承关系，程序会编译通过，但运行阶段会报错
+         * Error: java.lang.ClassCastException
+         * 强制转换符： (Bird) animal2
+         * */
+        // Bird bird2 = (Bird) animal2;
+        // bird2.run();
+
+
+        /**
+         * 避免向下转型异常， 出现 java.lang.ClassCastException 错误
+         * animal2 instanceof Cat =》 true||false
+         *
+         * true 表示 animal2 这个引用指向Cat
+         * */
+        if (animal2 instanceof Cat) {
+            // 向下转型【强制转换】
+            Cat cat4 = (Cat) animal2;
+            cat4.run();
+            cat4.eat();
+        } else if (animal2 instanceof Bird) {
+            Bird bird3 = (Bird) animal2;
+            bird3.run();
+            bird3.feature();
+        }
     }
 }

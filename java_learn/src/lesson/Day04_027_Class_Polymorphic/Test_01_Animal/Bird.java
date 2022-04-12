@@ -6,4 +6,9 @@ public class Bird extends Animal {
         System.out.println("鸟儿在飞");
         // super.run();
     }
+
+    public void feature() {
+        System.out.println("鸟儿有翅膀");
+        // super.run();
+    }
 }

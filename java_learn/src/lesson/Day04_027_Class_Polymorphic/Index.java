@@ -24,47 +24,15 @@ public class Index {
         /**
          * 向上转型   upcasting 自动转换
          * --》一多态本身就是向上转型过的过程
-         * 使用格式：父类类型 变量名=new 子类类型();
-         * 适用场景：当不需要面对子类类型时，通过提高扩展性，或者使用父类的功能就能完成相应的操作。
-         * */
-        Animal a = new Cat();
-        // 猫儿在捉老鼠...
-        a.run();
-        a.setAnimalName("VAT");
-        a.getAnimalName();
-        // Animal 中没有 getFeature 方法，编译会报错：
-        // a.getFeature();
-        // Animal 中没有 setCatName 方法，编译会报错：
-        // a.setCatName("CAT");
-
-        /**
+         * --》使用格式：父类类型 变量名=new 子类类型();
+         * --》适用场景：当不需要面对子类类型时，通过提高扩展性，或者使用父类的功能就能完成相应的操作。
          * 向下转型【downcasting 强制转换 】
          * --》一个已经向上转型的子类对象可以使用强制类型转换的格式，将父类引用类型转为子类引用各类型】
-         * 使用格式：子类类型 变量名=（子类类型） 父类类型的变量；
-         * 适用场景：当要使用子类特有功能时。
+         * --》使用格式：子类类型 变量名=（子类类型） 父类类型的变量；
+         * --》适用场景：当要使用子类特有功能时。
          * instanceof：
-         * 向下转型需要考虑安全性，如果父类引用的对象是父类本身，那么在向下转型的过程中是不安全的，编译不会出错，但是运行时会出现java.lang.ClassCastException错误。
-         * 它可以使用instanceof来避免出错此类错误即能否向下转型，只有先经过向上转型的对象才能继续向下转型。
+         * --》向下转型需要考虑安全性，如果父类引用的对象是父类本身，那么在向下转型的过程中是不安全的，编译不会出错，但是运行时会出现java.lang.ClassCastException错误。
+         * --》它可以使用instanceof来避免出错此类错误即能否向下转型，只有先经过向上转型的对象才能继续向下转型。
          * */
-        // 猫儿有四条腿...
-        // ((Cat) a).getFeature();
-        // 类型判断
-        // 向下转型   downCasting 强制转换
-        // 猫儿有四条腿...
-        if (a instanceof Cat) {
-            // 向下转型【强制转换】
-            Cat a2 = (Cat) a;
-            a2.getFeature();
-            a2.setCatName("Tom");
-            a2.getName();
-            // ANIMAL
-            a.getAnimalName();
-            a2.seAnimalName("TIMI");
-            // TIMI
-            a.getAnimalName();
-        } else if (a instanceof Bird) {
-            Bird a2 = (Bird) a;
-            a2.fly();
-        }
     }
 }

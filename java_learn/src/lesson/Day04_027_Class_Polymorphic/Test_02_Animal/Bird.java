@@ -1,4 +1,4 @@
-package lesson.Day04_027_Class_Polymorphic;
+package lesson.Day04_027_Class_Polymorphic.Test_02_Animal;
 
 public class Bird extends Animal {
     @Override
