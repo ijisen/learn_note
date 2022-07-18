@@ -1,0 +1,19 @@
+{
+  "name": "dpp",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "husen <husen@zdns.cn>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/vsp.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
