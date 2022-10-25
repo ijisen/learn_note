@@ -15,6 +15,7 @@ rm 删除文件
    
 mv 修改文件名
    mv old_name new_name
+   mv name path/name  移动文件
    
 cat 查看文件内容
   
@@ -42,3 +43,7 @@ tar 解压文件
        export NODE_HOME=/node-v10.15.3-linux-x64
        export PATH=$PATH:$NODE_HOME/bin 
        export NODE_PATH=$NODE_HOME/lib/node_modules
+node 服务启动：
+   nohup npm run serve > my.log 2>my.log & exit
+   查看进程
+   ps -A 
