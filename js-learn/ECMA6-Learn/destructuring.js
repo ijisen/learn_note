@@ -61,3 +61,16 @@ move({ x: 3, y: 4 }); // [3, 4]
 move({ x: 3 }); // [3, 0]
 move({ y: 4 }); // [0, 4]
 move(); // [0, 0]
+
+/** ------ 对象解构赋值 ----- */
+const props = { role: null };
+const {
+  userId = 'userId',
+  userName = 'userName',
+  role = { roleId: 'roleId', roleName: 'roleName' }
+} = props || {};
+
+const { roleId, roleName } = role || {};
+console.log(userId)
+console.log(role)
+console.log(roleId)
