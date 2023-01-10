@@ -19,13 +19,14 @@
 	-t 给镜像打标签
 	-f Dockerfile 路径
 	docker build -t jisen-demo ./docker
+	docker build -f ./docker/Dockerfile -t jisen-demo-1 .
 
 #### run 启动容器
 	-d 后台方式运行
 	-p 8136:80 端口映射，将宿主的8136端口映射到容器的80端口
 	–name 容器名 镜像名
 	// 通过镜像 [jisen-demo] 创建一个容器[isen-demo-container]并运行。
-	 docker run -d -p 8136:80 --name jisen-demo jisen-demo-container
+	 docker run -d -p 8136:80 --name jisen-demo-container jisen-demo
 
 #### stop 停止一个容器
 	 docker stop <容器 ID>
