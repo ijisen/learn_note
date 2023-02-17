@@ -2,35 +2,59 @@
 
 ## 使用软件
     docker compose down && docker compose up -d
-	
-### linux 修改文件内容
 
-1、进入文件：vim 文件名
-	vim /etc/httpd/httpd.conf
+#### ps 查看正在运行的容器
+	 docker ps
+	 // -f,--filter 过滤
+	 // -af  -a -f
+	 docker ps -af name='centos7'
+	 // -q 只显示id
+	 docker ps -aq
 
-2、查找待修改内容位置 ：
+#### port 查看指定 （ID 或者名字）容器的某个确定端口映射到宿主机的端口号。
+	 docker port bf08b7f2cd89 <容器 ID>
+	 docker port docker-gateway-umi-1 <名字>
 
-（1）shift+“：”，使文件变成可查询状态
+#### build 构建镜像
+	-t 给镜像打标签
+	-f Dockerfile 路径
+	docker build -t jisen-demo ./docker
+	docker build -f ./docker/Dockerfile -t jisen-demo-1 .
 
-（2）输入 / +查询内容 （eg 查询Directory参数，即 /Directory）
+#### run 启动容器
+	-d 后台方式运行
+	-p 8136:80 端口映射，将宿主的8136端口映射到容器的80端口
+	–name 容器名 镜像名
+	// 通过镜像 [jisen-demo] 创建一个容器[isen-demo-container]并运行。
+	 docker run -d -p 8136:80 --name jisen-demo-container jisen-demo
 
-	eg 找到Directory参数，注释掉Require all denied添加Require all granted
+#### stop 停止一个容器
+	 docker stop <容器 ID>
+	 docker stop docker-gateway-umi-1 <名字>
 
-3、找到位置后修改：按键盘 i 键 即变成可编辑状态
+#### restart 重启容器
+	 docker restart <容器 ID>
 
-4、修改文件内容后退出：按ESC键
+#### rm 删除容器跟镜像
+	 docker rm -f <容器 ID>
 
-5、保存修改：
+#### stats 查看容器资源占用情况
+	 docker stats jisen-demo
 
-（1）shift + :，使文件变成可查询状态
 
-（2）输入 wq！
+#### port 查看WEB应用程序容器的进程
+	 docker port bf08b7f2cd89 <容器 ID>
+	 docker port docker-gateway-umi-1 <容器名字>
 
-如果不保存修改，可：
 
-（1）shift + :，使文件变成可查询状态
+#### inspect 查看Docker 容器的配置和状态信息
+	 docker inspect docker-gateway-umi-1 <容器 ID>
+	 docker inspect docker-gateway-umi-1 <容器名字>
 
-（2）输入 q！
+
+#### logs 查看运行日志
+	 docker logs -f 50425b8f2ef3 <容器 ID>
+	 docker logs -f 50425b8f2ef3 <容器名字>
 
 
 
