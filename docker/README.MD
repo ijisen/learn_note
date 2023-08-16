@@ -29,6 +29,8 @@
 	// 通过镜像 [jisen-demo] 创建一个容器[isen-demo-container]并运行。
 	 docker run -d -p 8136:80 --name jisen-demo-container jisen-demo
 
+	在容器目录下重启服务：
+	docker compose pull && docker compose down && docker compose up -d
 #### stop 停止一个容器
 	 docker stop <容器 ID>
 	 docker stop docker-gateway-umi-1 <名字>

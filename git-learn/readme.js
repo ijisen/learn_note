@@ -79,7 +79,8 @@ branch 分支管理
    // 查看分支关联关系
     git checkout dev  || git status
 checkout	
-	git checkout -b dev(本地分支名称) origin/dev(远程分支名称)   // 将远程分支拉取到本地
+   // 创建新分支；将远程分支拉取到本地，
+	git checkout -b dev(本地分支名称) origin/dev(远程分支名称)
 	git checkout -- 1.txt //撤销修改(文本已修改，但还没add/commit到GIT库中)
 	
 	git reset HEAD 1.txt  //当文本已经提交到暂存区时，需先清除暂存区，再执行git checkout -- 1.txt 撤销修改
@@ -137,6 +138,9 @@ remote
 push
 	git push <远程主机名> <本地分支名>:<远程分支名>
 	git push origin master
+	// 将本地分支推送到远程分支，并建立关联关系
+	git push --set-upstream <远程主机名> <本地分支名>:<远程分支名>
+	git push --set-upstream  origin  eslint-merge:eslint
 	
 pull
     //取回远程分支与本地分支合并
@@ -262,7 +266,8 @@ Bug分支（临时任务变更）
 
 	  4、 没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
 
-	  5、 如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令 git branch --set-upstream branch-name origin/<branch-name> 
+	  5、 如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令 
+	  git branch --set-upstream branch-name origin/<branch-name> 
 
 gitignore
 	  git check-ignore  //检查gitignore文件规则是否有误

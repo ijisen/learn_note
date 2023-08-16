@@ -31,6 +31,8 @@ sz 下载文件
 
 tar 解压文件
    tar -xvf node-v14.16.1-linux-x64.tar.xz 
+   
+cp docker-compose.yml docker-compose.yml_20230710
 	
 # Node 安装：
   1. 解压 tar -xvf node-v10.15.3-linux-x64.tar.xz
