@@ -5,6 +5,9 @@ Git is free software.
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
 
+// 查看当前配置文件
+git config --global -l
+
 init
 	git init  //进入项目目录，把这个目录变成Git可以管理的仓库
 add 【添加文件至缓存区】

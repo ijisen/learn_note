@@ -1,5 +1,9 @@
 # docker 学习笔记
 
+## 停止docker服务
+	service docker stop
+	service docker start
+
 ## 使用软件
     docker compose down && docker compose up -d
 
@@ -28,6 +32,7 @@
 	–name 容器名 镜像名
 	// 通过镜像 [jisen-demo] 创建一个容器[isen-demo-container]并运行。
 	 docker run -d -p 8136:80 --name jisen-demo-container jisen-demo
+	 #### ps: 浏览器访问： 8136
 
 	在容器目录下重启服务：
 	docker compose pull && docker compose down && docker compose up -d
@@ -58,6 +63,15 @@
 #### logs 查看运行日志
 	 docker logs -f 50425b8f2ef3 <容器 ID>
 	 docker logs -f 50425b8f2ef3 <容器名字>
+
+
+#### images 查看docker 镜像
+	 docker images
+	 
+	 
+### 删除容器步骤
+	1、 docker stop <the-container-id>  暂停容器
+	1、 docker rm <the-container-id>    删除容器
 
 
 
