@@ -1,5 +1,15 @@
 # LINUX 学习笔记
 
+LINUX系统分为两种：
+1、redhat系列： redhat、centos、fedora
+==> 管理工具： yum
+2、debian系列： debian、ubuntu
+==> 管理工具： apt-get
+
+查看系统版本：
+==> cat /proc/version
+
+
 ## 使用软件
     SecureCRT
 ls || dir  查看当前目录文件
@@ -22,7 +32,10 @@ cat 查看文件内容
 ctrl + l 清空屏幕快捷键
 
 pwd 查看当前路径
-	  
+
+
+## 文件上传|下载
+    yum -y install lrzsz （rz sz工具包）	  
 rz 上传文件
     rz -y 覆盖上传
 	  
@@ -31,6 +44,8 @@ sz 下载文件
 
 tar 解压文件
    tar -xvf node-v14.16.1-linux-x64.tar.xz 
+   
+cp docker-compose.yml docker-compose.yml_20230710
 	
 # Node 安装：
   1. 解压 tar -xvf node-v10.15.3-linux-x64.tar.xz
