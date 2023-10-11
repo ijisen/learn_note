@@ -3,6 +3,10 @@ package lesson.Day01_02_Variable;
 /**
  * 变量
  * 变量名[标识符]： 数字 字母 下划线 $
+ * 标识符大小写敏感
+ * 【修饰符】
+ * 访问控制修饰符： default public protected private
+ * 非访问控制修饰符： final abstract static synchronized
  * 申明变量
  * 1.必须申明数据类型
  * 2.必须赋值
@@ -17,7 +21,8 @@ public class Variable {
      * boolean: false
      * chart: \u0000
      * */
-    static int id = 0;
+    // 成员变量 受保护的
+    protected int id = 0;
     // 成员变量 静态属性
     static int keys = 20;
     // 成员变量 私有属性

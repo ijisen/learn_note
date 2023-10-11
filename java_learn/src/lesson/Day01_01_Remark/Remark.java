@@ -1,6 +1,6 @@
 package lesson.Day01_01_Remark;
 /**
- * JAVA 注释
+ * JAVA doc 文档注释
  */
 
 // 注释方法一： 单行注释

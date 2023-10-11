@@ -6,23 +6,23 @@ package lesson.Day01_03_DataType;
  * 基本数据类型【原始数据类型】
  * ======  第一类： Integer【整数型】 ======
  * ------- 数据类型 ------- 占用空间大小【单位：子节】 ------- 默认值
- *          byte             1 【-128 - 127】                0
- *          short            2 【-32768 - 32767】            0
- *          int              4 【-2147483648 - 2147483647】  0
- *          long             8                               0
+ * byte             1 【-128 - 127】                0
+ * short            2 【-32768 - 32767】            0
+ * int              4 【-2147483648 - 2147483647】  0
+ * long             8       0
  * ======  第二类： Float【浮点型】 ======
  * ------- 数据类型 ------- 占用空间大小【单位：子节】 ------- 默认值
- *          float              4                             0.0f
- *          double             8                             0.0
+ * float              4     0.0f
+ * double             8     0.0
  * ======  第三类： Boolean【布尔型】 ======
  * ------- 数据类型 ------- 占用空间大小【单位：子节】 ------- 默认值
- *          boolean            1 【true, false】              false
+ * boolean            1 【true, false】              false
  * ======  第四类： String【字符型】 ======
  * ------- 数据类型 ------- 占用空间大小【单位：子节】 ------- 默认值
- *          char               2 【0-65535】                  \u0000
+ * char               2 【0-65535】                  \u0000
  * ps: short & char 有效位数一样，只不过char能表示更多的正数
  * <p>
- * 引用数据类型                                                  null
+ * 引用数据类型  null
  * 接口
  * 数组
  */
@@ -44,7 +44,26 @@ public class Index {
         f = 'd';
         System.out.print(f);*/
         // 0
-        System.out.print(e);
+        System.out.println(e);
+        int ff = 127;
+        System.out.println(ff);
+        byteTest();
+    }
+
+    public static void byteTest() {
+        char str = 'a';
+        System.out.println("type\tsize\tmin\t\t\t\t\t max");
+        System.out.println("byte\t" + Byte.SIZE + "\t\t" + Byte.MIN_VALUE + " \t\t\t\t " + Byte.MAX_VALUE);
+        System.out.println("short\t" + Short.SIZE + "\t\t" + Short.MIN_VALUE + " \t\t\t\t " + Short.MAX_VALUE);
+        System.out.println("int \t" + Integer.SIZE + "\t\t" + Integer.MIN_VALUE + "\t\t\t " + Integer.MAX_VALUE);
+        System.out.println("long\t" + Long.SIZE + "\t\t" + Long.MIN_VALUE + " " + Long.MAX_VALUE);
+
+        System.out.println(str);
+        for (int i = 0; i < 6; i++) {
+            str += 'A';
+        }
+        System.out.println(str);
+
     }
 }
 
