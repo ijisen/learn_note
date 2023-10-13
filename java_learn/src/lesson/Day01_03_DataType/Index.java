@@ -74,6 +74,20 @@ public class Index {
 class DataTypeNumber {
     public static void main(String[] arg) {
         /**
+         * 为什么 byte short 申明不用强制转型
+         * ==》 JVM特性，一般byte还是占用和int一样大小:4个字节；也就说在JVM看来，short,byte,int都是同一个东西。
+         *
+         * */
+        byte byte_a = 10; // -128 - 127
+        short short_a = 10; // -32768 - 32767
+        int int_a = 10;
+        long long_a = 10;
+
+        System.out.println("byte: " + byte_a);
+        System.out.println("short: " + short_a);
+        System.out.println("int: " + int_a);
+        System.out.println("long: " + long_a);
+        /**
          * java 语言中整数型有三种书写方式 十进制、八进制、十六进制
          * */
         // 十进制 10
@@ -114,10 +128,14 @@ class DataTypeNumber {
 
 /**
  * 数据类型-浮点型
- * double 双精度【8个子节】
- * float  单精度【4个子节，精度较高】
+ * double 双精度【8个子节】，可以存储大约6~7位有效数字。
+ * float  单精度【4个子节，精度较高】,可以存储大约15位有效数字
  * java 语言中会把 "浮点型字面值" 默认当作 double 类型处理
  * double 精度低【相对的】，不适合财务软件， sun 提供了  java.math.BigDecimal 类库，
+ * double类型的取值范围比float类型的取值范围更大且精度更高
+ * float和double类型用来表示近似的数值数据。
+ * => 因为现实世界中有这种无限循环的数据 例如：1/3。
+ * => 数据实际上是无限循环，但是计算机的内存有限，用一个有限的资源表示无限的数据，只能存储近似值。
  */
 
 class DataTypeFloat {
@@ -136,16 +154,34 @@ class DataTypeFloat {
         // 没有类型转换
         float c = 5.1f;
         System.out.println(c);
+        /**
+         * 精度损失
+         * */
+        double double_a = 2.7;
+        double double_b = 8.1 / 3; // 2.6999999999999997
+        System.out.println(double_b);
     }
 }
 
 /**
- * 数据类型-字符串
+ * 数据类型-字符(char)
+ * 字符型使用单引号' '表示，只能存储一个字符。
+ * char 的本质是一个无符号的整数行；表示Unicode字符
+ * 输出unicode码对应的字符
+ * char 因为本质是一个整数，所以可以参与运算
+ * char 以二进制存储，
  */
 class DataTypeChar {
     public static void main(String[] arg) {
         char a = 'a';
-        System.out.print(a);
+        System.out.println(a); // a
+        // 输出 a 对应的unicode码
+        System.out.println((int) a); // 97
+        char b = 97;
+        // 输出该编码对应的字符
+        System.out.println(b); // a
+        System.out.println(b + 10); // 107
+        System.out.println(a + 10); // 107
     }
 }
 
