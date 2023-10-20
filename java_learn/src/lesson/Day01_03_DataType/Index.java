@@ -160,6 +160,14 @@ class DataTypeFloat {
         double double_a = 2.7;
         double double_b = 8.1 / 3; // 2.6999999999999997
         System.out.println(double_b);
+        System.out.println(double_b == double_a); // false
+        System.out.println(2.0 == 2); // true
+        System.out.println(9.0/3); // 3
+        System.out.println(3 == 9.0/3); // true
+        System.out.println(9.3/3); // 3.1
+        System.out.println(3.1 == 9.3/3); // true
+        System.out.println(10.2/3); // 3.4
+        System.out.println(3.4 == 10.2/3); // true
     }
 }
 

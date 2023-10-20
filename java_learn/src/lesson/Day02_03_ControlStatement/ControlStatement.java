@@ -1,5 +1,5 @@
 package lesson.Day02_03_ControlStatement;
-
+import java.util.Scanner;
 /**
  * 控制语句
  * 选择结构： if  if..else switch
@@ -26,7 +26,7 @@ public class ControlStatement {
  */
 class ControlStatementIf {
     public static void main(String[] args) {
-        java.util.Scanner s = new java.util.Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
         System.out.print("请输入你的年龄：");
 
@@ -44,16 +44,22 @@ class ControlStatementIf {
 
 /**
  * Switch 语法
+ * 表达式数据类型与case数据类型必须一致，否则会报错； eg: grade 的类型和case类型。
+ * --> 或者可以自动转换成可以相互比较的类型： 输入的是int，比较的double
+ * 表达式值必须是： byte、short、int、char、enum、 String
+ * case 值必须是常量，不能是变量
  */
 class ControlStatementSwitch {
     public static void main(String[] args) {
-        java.util.Scanner s = new java.util.Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         System.out.print("请输入你的成绩: ");
 
         // 接收年龄输入内容
+        // 数据类型与case数据类型必须保持一致，或者他们之间可以自动转换
         int grade = s.nextInt();
         grade = grade / 10;
         char result = 'E';
+        // 表达式值
         switch (grade) {
             case 10:
             case 9:
@@ -79,7 +85,7 @@ class ControlStatementSwitch {
  */
 class ControlStatementFor {
     public static void main(String[] args) {
-        java.util.Scanner s = new java.util.Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         System.out.print("请输入查询下标： ");
 
         // 接收年龄输入内容
@@ -94,54 +100,6 @@ class ControlStatementFor {
     }
 }
 
-class ControlStatementForDemo1 {
-    public static void main(String[] args) {
-        for (int y = 1; y < 10; y++) {
-            String str = "";
-            for (int x = 1; x <= y; x++) {
-                int result = x * y;
-                str = x + "*" + y + "=" + result;
-                if (result < 10) {
-                    str += "  ";
-                } else {
-                    str += " ";
-                }
-            }
-            System.out.println(str);
-        }
-    }
-}
-
-class ControlStatementForDemo2 {
-    public static void main(String[] args) {
-        int rows = 0;
-        String str = "";
-        for (int i = 1; i <= 1000; i++) {
-            int count = 0;
-            for (int k = 1; k <= i; k++) {
-                // 素数，只能被自己和1整除。
-//                System.out.println(i + "%" + k + "=" + (i % k));
-                if ((i % k) == 0) {
-                    count++;
-                    if (count > 2) {
-                        break;
-                    }
-                }
-            }
-            if (count <= 2) {
-                if (rows == 8) {
-                    rows = 0;
-                    System.out.println(str);
-                    str = "";
-                } else {
-                    rows++;
-                    str = str + i;
-                    str += " ";
-                }
-            }
-        }
-    }
-}
 
 /**
  * while 控制语句
