@@ -1,6 +1,6 @@
 package lesson.Day02_03_ControlStatement;
 
-public class ControlStatementForDemo2 {
+public class ForDemo2 {
     public static void main(String[] args) {
         int rows = 0;
         String str = "";

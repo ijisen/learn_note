@@ -1,6 +1,6 @@
 package lesson.Day02_03_ControlStatement;
 
-public class ControlStatementSwitchDemo1 {
+public class SwitchDemo1 {
     public static void main(String[] arg) {
         // 表达式值: byte short int char enum String
         // switch (value): char, byte, short, int, Character, Byte, Short, Integer, String, or an enum
