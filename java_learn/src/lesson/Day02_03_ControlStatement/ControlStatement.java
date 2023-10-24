@@ -1,5 +1,7 @@
 package lesson.Day02_03_ControlStatement;
+
 import java.util.Scanner;
+
 /**
  * 控制语句
  * 选择结构： if  if..else switch
@@ -116,8 +118,81 @@ class ControlStatementWhile {
 
 /**
  * 循环语句打断
- *
  * break  打断循环
- * continue 跳过循环
- *
- * */
+ */
+class ControlStatementBreak {
+    public static void main(String[] arg) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+            // 当i=2时，中断for循环
+            if (i == 2) {
+                break;
+            }
+        }
+    }
+}
+
+/**
+ * 循环语句打断
+ * break 打断最近的循环
+ * label 打断标签名申明的循环，label名称为自定义
+ */
+class ControlStatementBreakLabel {
+    public static void main(String[] arg) {
+        label1:
+        for (int k = 1; k < 4; k++) {
+            label2:
+            for (int i = 1; i < 10; i++) {
+                System.out.println(i);
+                // 当i=2时，中断for循环
+                if (i == 2) {
+                    // 1 2
+                    break label1;
+                    // 1 2 1 2 1 2
+                    // break;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 循环语句打断 【continue】
+ * continue  打断循环
+ */
+class ControlStatementContinue {
+    public static void main(String[] arg) {
+        int i = 0;
+        while (i <= 4) {
+            i++;
+            if (i == 3) {
+                continue;
+            }
+            // 1 2 4 5
+            System.out.println(i);
+        }
+    }
+}
+
+/**
+ * 循环语句打断 【continue】
+ * continue  打断循环
+ */
+class ControlStatementContinueLabel {
+    public static void main(String[] arg) {
+        label1:
+        for (int k = 1; k < 4; k++) {
+            label2:
+            for (int i = 1; i < 5; i++) {
+                // 当i=2时，中断for循环
+                if (i == 3) {
+                    // 1 2 1 2 1 2
+                    continue label1;
+                    // 1 2 4 1 2 4 1 2 4
+//                     continue;
+                }
+                System.out.println(i);
+            }
+        }
+    }
+}

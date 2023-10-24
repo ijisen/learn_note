@@ -1,4 +1,4 @@
-package lesson.Day02_03_ControlStatement;
+package lesson.Day02_03_ControlStatement.demo;
 
 public class WhileDemo2 {
     public static void main(String[] arg) {
