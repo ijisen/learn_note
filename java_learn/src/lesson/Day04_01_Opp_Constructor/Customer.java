@@ -2,6 +2,8 @@ package lesson.Day04_01_Opp_Constructor;
 
 /**
  * 创建一个 coutomer 对象
+ * 构造器是为了完成对象的初始化
+ * eg: 下例的赋值
  */
 public class Customer {
     private int no;
@@ -32,6 +34,7 @@ public class Customer {
         this.birth = birth;
     }
 
+    // 构造器
     public Customer(int no, String name, String birth) {
         this.no = no;
         this.name = name;

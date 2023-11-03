@@ -32,6 +32,7 @@ public class Account {
         return balance;
     }
 
+    // 构造器
     public Account(int account, double balance) {
         this.account = account;
         this.balance = balance;
