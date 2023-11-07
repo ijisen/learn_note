@@ -1,10 +1,11 @@
 package lesson.Day04_029_Modifier;
 /**
- * 访问控制权限修饰符
+ * 【修饰符】
  * 作用：访问控制权限修饰符用来控制元素的访问范围
- * public  公开的
- * private 私有的，当前类中可访问
- * protected 受保护的； 同包 & 子类中直接访问
+ * --> public  公开的
+ * --> private 私有的，当前类中可访问
+ * --> protected 受保护的； 同包 & 子类中直接访问
+ * --> 默认级别： 没有修饰符号，向同一个包的类公开
  * 缺省 只能在同包下访问；
  * 修饰范围：
  * private < 缺省 < protected < public
