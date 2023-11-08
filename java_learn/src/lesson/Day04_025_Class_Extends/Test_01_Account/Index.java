@@ -1,4 +1,4 @@
-package lesson.Day04_024_Class_Extends.Test_01_Account;
+package lesson.Day04_025_Class_Extends.Test_01_Account;
 
 public class Index {
 

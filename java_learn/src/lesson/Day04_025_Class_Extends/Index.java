@@ -1,8 +1,11 @@
-package lesson.Day04_024_Class_Extends;
+package lesson.Day04_025_Class_Extends;
 
 /**
  * 继承 extends
- * 1、面向对象的三大特征： 封装 继承 多态
+ * 1、面向对象的三大特征：
+ * 封装【encapsulation】
+ * 继承【extend】
+ * 多态【Polymorphic】
  * 2、java语言中的继承只支持【单继承】;
  * 3、B类继承 A类
  * ----> A类称为： 父类、基类、超类、superclass

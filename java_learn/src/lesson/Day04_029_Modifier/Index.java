@@ -10,6 +10,27 @@ package lesson.Day04_029_Modifier;
  * 修饰范围：
  * private < 缺省 < protected < public
  */
+
+
+/**
+ * 访问级别       同 包  同 类  子 类  不同包
+ *
+ * public          1     1     1      1
+ *
+ * protected       1     1     1      X
+ *
+ * 缺省            1     1     X      X
+ *
+ * private         X     1     X      X
+ * */
+
+/**
+ * 使用修饰符注意事项：
+ * 1、修饰符可以用来修饰类的属性、成员方法和类
+ * 2、只有【缺省】和【public】才能修饰类
+ * 3、
+ *
+ * */
 public class Index {
     public static void main(String[] args) {
         Parent parent = new Parent();

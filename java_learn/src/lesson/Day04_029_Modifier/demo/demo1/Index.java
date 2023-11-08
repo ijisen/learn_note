@@ -1,6 +1,11 @@
 package lesson.Day04_029_Modifier.demo.demo1;
 
 import java.util.Date;
+/**
+ *
+ * 我是demo1包下的类
+ *
+ * */
 
 /**
  * public： 对外公开
@@ -30,7 +35,7 @@ public class Index {
 }
 
 
-// 默认属性， 仅在当前包类开放
+// 默认属性， 仅对当前包和类开放
 class Person {
     // protected 受保护的属性，仅能在当前包和类中使用
     protected String id;
@@ -42,7 +47,7 @@ class Person {
     public Person(String name, int age) {
         this.id = new Date().toString();
         if (age < 10) {
-            new Baby();
+            new BabySpeak();
         } else if (age < 20) {
             Student student = new Student("五年级");
 
