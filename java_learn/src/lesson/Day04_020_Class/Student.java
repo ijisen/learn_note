@@ -9,7 +9,7 @@ package lesson.Day04_020_Class;
  *   Sting
  * */
 /**
- * Student 是类， 属于引用数据类型，是一个类型名
+ * Super_Student 是类， 属于引用数据类型，是一个类型名
  * 类的定义：【修饰符】 class 类名
  * */
 public class Student {
