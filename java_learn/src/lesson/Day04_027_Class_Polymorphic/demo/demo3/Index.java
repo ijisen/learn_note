@@ -29,7 +29,7 @@ public class Index {
 
         /** 使用多态方法 */
         /**
-         * Index 向上转型【upcasting】
+         * Polymorphic 向上转型【upcasting】
          * Animal 和 Cat 是继承关系； Animal 是父类， Cat是子类；
          * new Cat() 创建的对象类型是Cat；
          * cat2 的引用数据类型是 Animal；

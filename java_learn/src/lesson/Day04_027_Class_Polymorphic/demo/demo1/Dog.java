@@ -1,4 +1,4 @@
-package lesson.Day04_027_Class_Polymorphic.demo;
+package lesson.Day04_027_Class_Polymorphic.demo.demo1;
 /**
  *
  * 创建一个Dog对象，继承Pet

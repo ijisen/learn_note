@@ -22,7 +22,7 @@ package lesson.Day04_027_Class_Polymorphic;
 public class Index {
     public static void main(String[] args) {
         /**
-         * 向上转型   upcasting 自动转换
+         * 向上转型   upcasting 自动转换 [本质： 父类的引用指向了子类]
          * --》一多态本身就是向上转型过的过程
          * --》使用格式：父类类型 变量名=new 子类类型();
          * --》适用场景：当不需要面对子类类型时，通过提高扩展性，或者使用父类的功能就能完成相应的操作。
@@ -34,5 +34,37 @@ public class Index {
          * --》向下转型需要考虑安全性，如果父类引用的对象是父类本身，那么在向下转型的过程中是不安全的，编译不会出错，但是运行时会出现java.lang.ClassCastException错误。
          * --》它可以使用instanceof来避免出错此类错误即能否向下转型，只有先经过向上转型的对象才能继续向下转型。
          * */
+        Animal animal = new Bird();
+        /** 方法运行结果，看运行类型 */
+        // 鸟儿在捉虫子
+        animal.run();
+        /** ps: 属性没有重写之说，属性的值看编译类型 */
+        // 20
+        System.out.println(animal.count);
+        // 编译阶段无法找到bird.fly
+        // bird.fly();
+        // 【向下转型】
+        // 鸟儿在飞行...
+        ((Bird) animal).fly();
+        // 200
+        System.out.println(((Bird) animal).count);
+
+        // animal 强制向下转型
+        Bird bird = (Bird) animal;
+        // 鸟儿在飞行...
+        bird.fly();
+        // 运行报错 =》 ClassCastException：猫儿不能强制转换成鸟儿
+        // Cat cat = (Cat) animal;
+
+        /**
+         *  instanceof：
+         *  --》向下转型需要考虑安全性，如果父类引用的对象是父类本身，那么在向下转型的过程中是不安全的，编译不会出错，但是运行时会出现java.lang.ClassCastException错误。
+         *  --》它可以使用instanceof来避免出错此类错误即能否向下转型，只有先经过向上转型的对象才能继续向下转型。
+         *  */
+        // true
+        System.out.println(bird instanceof  Animal);
+        // true
+        System.out.println(bird instanceof  Bird);
+
     }
 }

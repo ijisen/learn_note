@@ -1,4 +1,4 @@
-package lesson.Day04_027_Class_Polymorphic.demo;
+package lesson.Day04_027_Class_Polymorphic.demo.demo1;
 
 public class Pet {
     public void eat () {

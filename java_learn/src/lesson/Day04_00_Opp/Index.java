@@ -7,7 +7,7 @@ package lesson.Day04_00_Opp;
  * 面向过程【Procedure-Oriented Programming】 POP
  * ---> 优点：性能比面向对象好，因为类调用时需要实例化，开销比较大，比较消耗资源。
  * ---> 缺点：不易维护、不易复用、不易扩展.
- * 面向对象【Object Oriented Programming】 Index
+ * 面向对象【Object Oriented Programming】 Polymorphic
  * ---> 优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统 更加灵活、更加易于维护 .
  * ---> 缺点：性能比面向过程差
  * 面项对象的关注点是： 实现的给

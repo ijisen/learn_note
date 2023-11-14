@@ -1,4 +1,4 @@
-package lesson.Day04_026_Class_OverRide.Test01_Animal;
+package lesson.Day04_025_Class_OverRide.demo.demo2;
 
 public class Index {
     public static void main(String[] args) {

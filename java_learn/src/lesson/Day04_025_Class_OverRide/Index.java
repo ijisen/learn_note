@@ -1,4 +1,4 @@
-package lesson.Day04_026_Class_OverRide;
+package lesson.Day04_025_Class_OverRide;
 
 /**
  * 方法重写（方法覆盖） override

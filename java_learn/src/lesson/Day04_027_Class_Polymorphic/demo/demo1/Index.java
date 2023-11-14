@@ -1,4 +1,4 @@
-package lesson.Day04_027_Class_Polymorphic.demo;
+package lesson.Day04_027_Class_Polymorphic.demo.demo1;
 
 public class Index {
     public static void main(String[] args) {
@@ -9,5 +9,16 @@ public class Index {
 
         Dog dog = new Dog();
         li.feed(dog);
+    }
+}
+
+/**
+ *
+ * 创建一个Master对象，用来喂养动物
+ *
+ * */
+class Master {
+    public void feed(Pet pet) {
+        pet.eat();
     }
 }
