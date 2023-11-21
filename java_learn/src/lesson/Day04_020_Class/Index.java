@@ -8,14 +8,9 @@ package lesson.Day04_020_Class;
  * 引用数据类型
  * Sting
  * 面项对象三大特征
- * ----> 封装
- * ----> 继承
- * ----> 多态
- */
-
-/**
- * 类定义格式
- * 【修饰符】 class 类名
+ * ----> 封装 encapsulation
+ * ----> 继承 extend
+ * ----> 多态 polymorphic
  */
 public class Index {
 }

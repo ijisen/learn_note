@@ -13,7 +13,7 @@ package lesson.Day04_023_Class_Static_Block;
 public class Index {
     // 构造函数
     public Index() {
-        System.out.println("Index");
+        System.out.println("Polymorphic");
     }
 
     // 静态代码块
