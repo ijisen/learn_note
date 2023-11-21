@@ -1,6 +1,5 @@
-package demo.SmallChangeSys;
+package demo.demo1;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Index {
