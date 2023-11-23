@@ -4,8 +4,8 @@
 
 /** ====== Array ES5 API ===== */
 
-let arr_a = [1, 2, 3, 4, 5, 6];
-let arr_b = [7, 8, 9, 10, 11, 12];
+let arr_a = [ 1, 2, 3, 4, 5, 6 ];
+let arr_b = [ 7, 8, 9, 10, 11, 12 ];
 /** concat() 合并数组
  *  array1.concat(array2,array3,...,arrayX)
  *  */
@@ -18,7 +18,7 @@ arr_a.concat(arr_b);
  *  arr 可选,当前数组对象
  *  */
 // eg：
-let filter_arr = [1, 2, 3, 4, 5, 6];
+let filter_arr = [ 1, 2, 3, 4, 5, 6 ];
 filter_arr.filter((currentValue) => {
   return currentValue % 2 === 0
 });
@@ -30,7 +30,7 @@ filter_arr.filter((currentValue) => {
  *  arr 可选,当前数组对象
  *  */
 // eg：
-let foreach_arr = [1, 2, 3, 4, 5, 6];
+let foreach_arr = [ 1, 2, 3, 4, 5, 6 ];
 foreach_arr.forEach((currentValue, index) => {
   console.log(currentValue);
   console.log(index);
@@ -43,7 +43,7 @@ foreach_arr.forEach((currentValue, index) => {
  *  arr 可选,当前数组对象
  *  */
 // eg：
-let map_arr = [1, 2, 3, 4, 5, 6];
+let map_arr = [ 1, 2, 3, 4, 5, 6 ];
 let new_map_arr = map_arr.map((currentValue, index) => {
   return currentValue += 2;
   console.log(index);
@@ -57,7 +57,6 @@ console.log(new_map_arr);
  * for系遍历总体性能好于forEach、map等数组方法
  * forEach性能优于map
  * */
-
 
 
 /** indexOf() 元素查找，返回匹配的第一条数据的下标，没有找到返回-1
@@ -88,7 +87,7 @@ Array.isArray(arr_a);
  *  separator 可选参数, 分隔符，默认使用','
  *  */
 // eg：
-let arr_join = [1, 2, 3, 4, 5, 6];
+let arr_join = [ 1, 2, 3, 4, 5, 6 ];
 arr_join.join(''); // '123456'
 arr_join.join(); // '1,2,3,4,5,6'
 
@@ -100,7 +99,7 @@ arr_join.join(); // '1,2,3,4,5,6'
  *  arr 可选，当前元素所属的数组对象
  *  */
 // eg：
-let arr_reduce = [1, 2, 3, 4, 5, 6];
+let arr_reduce = [ 1, 2, 3, 4, 5, 6 ];
 arr_reduce.reduce((total, currentValue, currentIndex, arr) => {
   total += currentValue;
   console.log(total);
@@ -116,7 +115,7 @@ arr_reduce.reduce((total, currentValue, currentIndex, arr) => {
  *  end 可选, 不包括该元素
  *  */
 // eg：
-let arr_slice = [0, 1, 2, 3, 4, 5, 6];
+let arr_slice = [ 0, 1, 2, 3, 4, 5, 6 ];
 arr_slice.slice(0, 4); // [0, 1, 2, 3]
 
 /** splice() 数组截取【会改变原始数据】
@@ -126,7 +125,7 @@ arr_slice.slice(0, 4); // [0, 1, 2, 3]
  *  item1 插入的数据
  *  */
 // eg：
-let arr_splice = [0, 1, 2, 3, 4, 5, 6];
+let arr_splice = [ 0, 1, 2, 3, 4, 5, 6 ];
 arr_splice.splice(1, 2); // [1, 2]
 console.log(arr_splice); // [0, 3, 4, 5, 6];
 
@@ -135,12 +134,16 @@ console.log(arr_splice); // [0, 3, 4, 5, 6];
  *  sortfunction 可选，排序方式
  *  */
 // eg：
-let arr_sort = [40,100,1];
+let arr_sort = [ 40, 100, 1 ];
 arr_sort.sort(); // [1, 100, 40]
 // 升序
-arr_sort.sort((a, b) => { return a - b }); // [1, 100, 40]
+arr_sort.sort((a, b) => {
+  return a - b
+}); // [1, 100, 40]
 // 降序
-arr_sort.sort((a, b) => { return b - a }); // [100, 40, 1]
+arr_sort.sort((a, b) => {
+  return b - a
+}); // [100, 40, 1]
 
 /** ====== Array ES6 API ===== */
 
@@ -169,7 +172,7 @@ arr_a.includes(item, start);
  *  arr 数组对象
  *  */
 // eg：
-let arr_find = [1, 2, 3, 4, 5, 6];
+let arr_find = [ 1, 2, 3, 4, 5, 6 ];
 arr_find.find((currentValue) => {
   // 返回元素值 || undefined
   return currentValue > 3
@@ -182,21 +185,40 @@ arr_find.find((currentValue) => {
  *  arr 数组对象
  *  */
 // eg：
-let arr_find_index = [1, 2, 3, 4, 5, 6];
+let arr_find_index = [ 1, 2, 3, 4, 5, 6 ];
 arr_find_index.findIndex((currentValue) => {
-    // 返回元素下标 || -1
-    return currentValue > 3
+  // 返回元素下标 || -1
+  return currentValue > 3
 });
 
 /** entries()，keys() 和 values() */
 // eg：
-let arr_of = ['a', 'b', 'c'];
+let arr_of = [ 'a', 'b', 'c' ];
 for (let item of arr_of.values()) {
   console.log(item); // a b c
 }
 for (let index of arr_of.keys()) {
   console.log(index) //0, 1, 2
 }
-for (let [index, item] of arr_of.entries()) {
+for (let [ index, item ] of arr_of.entries()) {
   console.log(index, item) // 0 a; 1 b; 2 c
 }
+
+let arrSort = (arr) => {
+  console.log(arr)
+  const len = arr.length;
+  for (let i = 0; i < len - 1; i++) {
+    let item = arr[i];
+    for (let k = i + 1; k < len; k++) {
+      let nextItem = arr[k];
+      if (item < nextItem) {
+        arr[i] = nextItem;
+        arr[k] = item;
+        item = nextItem;
+      }
+    }
+  }
+  console.log(arr)
+}
+arrSort([ 4, -1, 9, 1, 2, 9, -2, -3, 0, 1, 5, 8, 11, -20, 0 ]);
+arrSort([ 5, 9, 10, 1, 80, 20, 4 ]);
