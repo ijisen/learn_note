@@ -1,4 +1,4 @@
-package lesson.Day04_027_Class_Polymorphic.demo.demo4_attr;
+package lesson.Day04_027_Class_Polymorphic.attr;
 
 public class Index2 {
     public static void main(String[] args) {

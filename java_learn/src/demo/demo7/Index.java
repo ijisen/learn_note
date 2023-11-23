@@ -123,3 +123,4 @@ class Teacher extends Person {
         System.out.println(getName() + "爱下象棋");
     }
 }
+
