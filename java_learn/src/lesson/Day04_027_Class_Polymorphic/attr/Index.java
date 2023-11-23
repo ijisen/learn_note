@@ -1,5 +1,11 @@
-package lesson.Day04_027_Class_Polymorphic.demo.demo4_attr;
+package lesson.Day04_027_Class_Polymorphic.attr;
 
+/**
+ * 属性的重写问题
+ *
+ * 属性没有重写之说，属性的值看编译类型；
+ *
+ * */
 public class Index {
     public static void main(String[] arg) {
         Base base = new Sub();

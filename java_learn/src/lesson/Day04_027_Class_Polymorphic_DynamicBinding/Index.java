@@ -10,7 +10,8 @@ public class Index {
         // a 的编译类型是A
         // a 的运行类型是B
         A a = new B();
-        // 40 => 20 + 10 = 30
+        // 10
+        System.out.println(a.i);
         /**
          * 执行步骤：
          * 1、先去运行类型B中查找sum方法
@@ -23,7 +24,7 @@ public class Index {
          * */
         // a.sum => b.getI  => 20
         System.out.println(a.sum());
-        // 30 -> 10 + 10 = 20
+        // a.sumI -> 10 + 10 = 20
         System.out.println(a.sumI());
     }
 }

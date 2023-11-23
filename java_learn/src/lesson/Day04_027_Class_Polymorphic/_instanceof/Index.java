@@ -1,4 +1,4 @@
-package lesson.Day04_027_Class_Polymorphic.demo.demo5_instanceof;
+package lesson.Day04_027_Class_Polymorphic._instanceof;
 
 /**
  *  instanceof： 判断对象的运行类型是否是XX类或XX子类的字类型
@@ -14,11 +14,14 @@ public class Index {
         System.out.println(bb instanceof  AA);
 
 
+        // 编译类型 AA  运行类型 BB
         AA aa = new BB();
         // true
         System.out.println(aa instanceof  BB);
         // true
         System.out.println(aa instanceof  AA);
+        // true
+        System.out.println(aa instanceof  Object);
 
 
         AA aaa = new AA();
