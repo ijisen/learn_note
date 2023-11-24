@@ -1,4 +1,4 @@
-package lesson.Day04_022_Class_Static.Test_01_Chinese;
+package lesson.Day04_022_Class_Static.demo.demo1;
 
 public class Index {
     public static void main(String[] args) {

@@ -41,6 +41,6 @@ public class Index {
         System.out.println("main ");
         // 构造函数执行一次， 实例代码块就执行一次
         new Index();
-        new Index();
+//        new Index();
     }
 }
