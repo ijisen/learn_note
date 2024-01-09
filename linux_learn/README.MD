@@ -33,6 +33,10 @@ ctrl + l 清空屏幕快捷键
 
 pwd 查看当前路径
 
+## 切换ROOT权限
+
+su root
+
 
 ## 文件上传|下载
     yum -y install lrzsz （rz sz工具包）	  

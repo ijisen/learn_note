@@ -35,7 +35,7 @@
 	 #### ps: 浏览器访问： 8136
 
 	在容器目录下重启服务：
-	docker compose pull && docker compose down && docker compose up -d
+	docker compose pull && docker compose down && docker compose up -d
 #### stop 停止一个容器
 	 docker stop <容器 ID>
 	 docker stop docker-gateway-umi-1 <名字>

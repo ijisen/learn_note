@@ -1,9 +1,14 @@
 package lesson.Day04_023_Class_Static_Block.demo.demo3;
 
 /**
- * 类继承时，静态代码块加载顺序
+ * 类继承时，静态代码块&普通代码块组合加载顺序
  * <p>
  * 调用B.no 执行类的加载： 调用类的静态属性或方法，就是类加载时。
+ * <p>
+ * 1、执行静态代码块和静态属性初始化，执行顺序为代码定义顺序
+ * <p>
+ * 2、执行实例代码块和实例属性初始化，执行顺序为代码定义顺序
+ * （ps: 实际执行的是构造器函数， 先执行super，再执行本类的方法）
  */
 public class Index {
     public static void main(String[] args) {
