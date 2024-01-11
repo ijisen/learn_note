@@ -1,4 +1,4 @@
-package lesson.Day04_029_Modifier;
+package lesson.Day04_30_Modifier;
 
 public class Parent {
     public int id = 999;

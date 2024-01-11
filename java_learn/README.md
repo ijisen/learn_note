@@ -17,3 +17,7 @@ java lesson.Day01_02_Variable.Variable
 - 框架
 - 分布式技术
 
+# 快捷键
+- System.out.print => sout
+- public static void main => psvm
+

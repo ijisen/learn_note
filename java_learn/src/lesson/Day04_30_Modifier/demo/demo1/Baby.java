@@ -1,4 +1,4 @@
-package lesson.Day04_029_Modifier.demo.demo1;
+package lesson.Day04_30_Modifier.demo.demo1;
 
 /**
  * 我是demo1包下的public类， 我可以随意使用 同包|同类|子类|不同包

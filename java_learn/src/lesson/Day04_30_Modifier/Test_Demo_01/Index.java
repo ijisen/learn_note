@@ -1,6 +1,6 @@
-package lesson.Day04_029_Modifier.Test_Demo_01;
+package lesson.Day04_30_Modifier.Test_Demo_01;
 
-import lesson.Day04_029_Modifier.Children;
+import lesson.Day04_30_Modifier.Children;
 
 public class Index {
     public static void main(String[] args) {
