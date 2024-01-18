@@ -6,6 +6,10 @@ javac -encoding UTF-8 lesson.Day01_02_Variable.Variable.java
 #运行
 java lesson.Day01_02_Variable.Variable
 
+
+#TODO:
+- 修饰符
+
 # 学习路线
 
 - java基础
@@ -20,4 +24,7 @@ java lesson.Day01_02_Variable.Variable
 # 快捷键
 - System.out.print => sout
 - public static void main => psvm
+
+
+
 
