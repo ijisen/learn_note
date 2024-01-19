@@ -3,6 +3,7 @@ package lesson.Day06_00_inner_class.MemberInnerClass;
 
 public class Class_A {
     String name = "Class_A";
+    static String s_name = "Class_static_A_name";
     /**
      * 成员内部类
      */
@@ -37,7 +38,7 @@ public class Class_A {
         System.out.println(innerB.protected_name);
         System.out.println(innerB.public_name);
     }
-    public InnerA returnInnerA() {
+    public InnerA getInnerA() {
         // 私有属性不会被返回
         return new InnerA();
     }
@@ -52,12 +53,39 @@ public class Class_A {
     }
 
     /**
-     * 静态成员内部类
+     * 静态成员内部类， 使用&访问规则遵循 static 规则
+     * --> 即： 只能访问静态方法和静态属性
      */
     static class InnerC {
         public String public_name = "public InnerC";
         protected String protected_name = "protected InnerC";
         String name = "InnerC";
         private String private_name = "private InnerC";
+        {
+            System.out.println("Inner C constructor");
+        }
+        public void runInnerC () {
+            // 内部静态类只能访问外部类的静态属性
+            System.out.println(Class_A.s_name);
+            System.out.println(this.public_name);
+            System.out.println(protected_name);
+            System.out.println(name);
+            System.out.println(private_name);
+        }
+    }
+
+    public InnerC getInnerC () {
+        // 私有属性不会被返回
+        return new InnerC();
+    }
+
+    /**
+     * 私有静态类
+     * */
+    private static final class InnerD {
+        public String public_name = "public InnerD";
+        protected String protected_name = "protected InnerD";
+        String name = "InnerD";
+        private String private_name = "private InnerD";
     }
 }
