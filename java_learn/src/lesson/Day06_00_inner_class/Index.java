@@ -10,8 +10,9 @@ package lesson.Day06_00_inner_class;
  * 5、内部类：
  * 【内部类分类】
  * 1、定义在外部类的局部位置上，比如方法内 LocalInnerClass
- * --> 局部内部类（有类名）
- * --> 匿名内部类（没有类名）
+ * --> 局部内部类（有类名） LocalInnerClass
+ * --> 匿名内部类（没有类名） LocalInnerClass_anonymous
+ * ----> 局部内部类和匿名内部类： 限制规则是一样的
  * 2、定义在外部类的成员位置上 MemberInnerClass
  * --> 成员内部类（没有static修饰符）
  * --> 静态内部类（有static修饰符）
