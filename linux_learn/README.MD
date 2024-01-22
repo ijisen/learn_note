@@ -63,12 +63,14 @@ cp docker-compose.yml docker-compose.yml_20230710
        export PATH=$PATH:$NODE_HOME/bin 
        export NODE_PATH=$NODE_HOME/lib/node_modules
 node 服务启动：
-   nohup npm run serve > my.log 2>my.log & exit
+   nohup npm run start > my.log 2>my.log & exit
    查看进程
    ps -A 
    
 根据端口号查看PID
   netstat -anp|grep 7997
+  // 查看端口
+  netstat -tunlp
 	
 ### linux 修改文件内容
 
