@@ -15,6 +15,7 @@ import java.util.ArrayList;
  @Documented    //修饰会被javadoc提取，生成到javadoc文档
  @Retention(RetentionPolicy.RUNTIME|SOURCE|CLASS)  // 注解保留生命周期  源码|编译类|JVM
  @Target(value={CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, PARAMETER, TYPE}) // 申明可修饰程序元素
+ @Inherited    //继承注解
  */
 
 
