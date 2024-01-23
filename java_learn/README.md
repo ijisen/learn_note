@@ -6,6 +6,14 @@ javac -encoding UTF-8 lesson.Day01_02_Variable.Variable.java
 #运行
 java lesson.Day01_02_Variable.Variable
 
+# java 反编译
+- javap  文件路径/*.class  =》 查看java代码
+
+#仓库地址：
+- git 仓： https://github.com/ijisen/learn_note
+- gitee 仓： https://github.com/ijisen/learn_note
+- 修改仓库地址： git remote set-url origin xxx
+
 
 #TODO:
 - 修饰符
@@ -24,6 +32,8 @@ java lesson.Day01_02_Variable.Variable
 # 快捷键
 - System.out.print => sout
 - public static void main => psvm
+
+
 
 
 

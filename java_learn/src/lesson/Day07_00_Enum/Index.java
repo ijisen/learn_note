@@ -1,95 +1,173 @@
 package lesson.Day07_00_Enum;
 
 /**
- * 枚举值
- * <p>
- * 1、不需要提供set方法，因为枚举值都是只读
- * 2、对枚举对象/属性使用final + static共同修饰，实现底层优化
- * 3、枚举对象通常大写，常量的命名规范
- * 4、枚举对象根据需求，可以拥有多个属性
+ * Enum 枚举值
  */
 public class Index {
     public static void main(String[] args) {
-        // lesson.Day07_00_Enum.Season@1b6d3586
-        System.out.println(Season.AUTUMN.getName());
-        System.out.println(Season.AUTUMN.getDesc());
+        Season spring = Season.SPRING;
+        System.out.println(spring.getLabel());
+        System.out.println(spring.getLabelEn());
+        System.out.println(spring.getValue());
 
-        System.out.println(Season2.SUMMER.getName());
-        System.out.println(Season2.SUMMER.getDesc());
+        System.out.println("---------");
 
+        Season2 spring2 = Season2.SPRING;
+        Season2 spring3 = Season2.SPRING;
+        // 等同于 spring.toString()， Enum toString方法
+        // SPRING
+        System.out.println(spring2);
+        System.out.println(spring2.toString());
+        // true 同一个静态类，同一个内存地址
+        System.out.println(spring2 == spring3);
+        System.out.println(spring2.getLabel());
+        System.out.println(spring2.getLabelEn());
+        System.out.println(spring2.getValue());
+
+        /**
+         *
+         * enum 公共方法
+         * C:\Program Files\Java\jdk1.8.0_112\jre\lib\rt.jar!\java\lang\Enum.class
+         *
+         *
+         * */
+        System.out.println("----------");
+
+        // .name() =>  输出枚举对象的名称 => SPRING
+        System.out.println("-----name()-----");
+        System.out.println(Season2.SPRING.name());
+
+        // .toString() =>  SPRING => 已经被重写
+        System.out.println("-----toString()-----");
+        System.out.println(Season2.SPRING.toString());
+
+        // .ordinal() => 枚举下标 =》 0 | 2
+        System.out.println("-----ordinal()-----");
+        System.out.println(Season2.SPRING.ordinal());
+        System.out.println(Season2.AUTUMN.ordinal());
+
+        // .values() => 返回枚举对象数组 =》
+        System.out.println("-----values()-----");
+        Season2[] values = Season2.values();
+        // 增强for循环
+        for (Season2 season : values) {
+            // SPRING,SUMMER,AUTUMN,WINTER,Other
+            System.out.println(season);
+        }
+
+        // .valueOf() => 查找枚举对象 =》
+        System.out.println("-----valueOf()-----");
+        // 返回枚举对象的toString()
+        System.out.println(Season2.valueOf("AUTUMN"));
+        // ERROR: No enum constant lesson.Day07_00_Enum.Season2.AUTUMN2
+        // System.out.println(Season2.valueOf("AUTUMN2"));
+
+        // .compareTo() => 枚举下标相减 =》 -1
+        System.out.println("-----compareTo()-----");
+        System.out.println(Season2.AUTUMN.compareTo(Season2.WINTER));
     }
 }
 
+
 /**
- * 第一种方式： 自定义类实现枚举
- * <p>
- * 1、不需要提供set方法，因为枚举值都是只读
- * 2、对枚举对象/属性使用final + static共同修饰，实现底层优化
- * 3、枚举对象通常大写，常量的命名规范
- * 4、枚举对象根据需求，可以拥有多个属性
- * */
+ * 第一种实现方式： 类实现
+ */
+// 1、创建一个类
 class Season {
-    private final String name;
-    private final String desc;
+    // 2、申明枚举属性
+    private String label;
+    private String labelEn;
+    private String value;
 
-    // Season内部直接创建固定对象
-    // 添加 final 修饰符， 实现底层优化
-    public final static Season SPRING = new Season("春天", "温暖");
-    public final static Season SUMMER = new Season("夏天", "炎热");
-    public final static Season AUTUMN = new Season("秋天", "凉爽");
-    public final static Season WINTER = new Season("冬天", "寒冷");
 
-    /**
-     * 1、构造器私有化，防止new
-     * 2、取得setXX 方法,防止属性被修改
-     * 3、在Season内部，直接创建固定对象
-     */
-    private Season(String name, String desc) {
-        this.name = name;
-        this.desc = desc;
+    // 3、创建一个私有构造器, 避免new； 实现枚举
+    private Season(String label, String labelEn, String value) {
+        this.label = label;
+        this.labelEn = labelEn;
+        this.value = value;
     }
 
-    public String getName() {
-        return name;
+    // 4、枚举实例化
+    //1、添加 final + static， 实现底层优化
+    //2、每一次实例化都会加载一次实例代码块
+    public static final Season SPRING = new Season("春天", "spring", "spring");
+    public static final Season SUMMER = new Season("夏天", "summer", "summer");
+    public static final Season AUTUMN = new Season("秋天", "autumn", "autumn");
+    public static final Season WINTER = new Season("冬天", "winter", "winter");
+
+    // 5、配置get XX方法获取枚举属性
+    public String getLabel() {
+        return label;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getLabelEn() {
+        return labelEn;
     }
-};
+
+    public String getValue() {
+        return value;
+    }
+}
+
 
 /**
- * 第二种方式： 使用 enum 关键字实现枚举
+ * 第二种方式： 使用enum枚举实现
  * <p>
- * 1、不需要提供set方法，因为枚举值都是只读
- * 2、常量对象必需写在首行，多个以，号隔开
- * 3、枚举对象通常大写，常量的命名规范
- * 4、枚举对象根据需求，可以拥有多个属性
- * */
-enum Season2 {
-    // 常量对象
-    SPRING("春天", "温暖"),
-    SUMMER("夏天", "炎热"),
-    AUTUMN("秋天", "凉爽"),
-    WINTER("冬天", "寒冷");
-    private final String name;
-    private final String desc;
+ * 方式与第一种基本一致，只是枚举实现方式不一样。
+ * <p>
+ * 注意事项
+ * 1、enum 不能被继承，也不能继承别的， 因为他已经隐式继承了Enum 类
+ * 2  enum 可以继承接口
+ */
+interface SeasonInterface {
+    public String toString();
+}
 
-    /**
-     * 1、构造器私有化，防止new
-     * 2、取得setXX 方法,防止属性被修改
-     * 3、在Season内部，直接创建固定对象
-     */
-    private Season2(String name, String desc) {
-        this.name = name;
-        this.desc = desc;
+enum Season2 implements SeasonInterface {
+    // 4、编写数据字典， 数据字典必须放第一行，多个用，号隔开
+    SPRING("春天", "spring", "spring"),
+    SUMMER("夏天", "summer", "summer"),
+    AUTUMN("秋天", "autumn", "autumn"),
+    WINTER("冬天", "winter", "winter"),
+    // 调用无参构造器， 等同于 Other()
+    Other;
+
+    // 1、 申明枚举属性
+    private String label;
+    private String labelEn;
+    private String value;
+
+    // 无参构造器
+    private Season2() {
+
     }
 
-    public String getName() {
-        return name;
+    // 2、创建一个私有构造器, 避免new； 实现枚举
+    private Season2(String label, String labelEn, String value) {
+        this.label = label;
+        this.labelEn = labelEn;
+        this.value = value;
     }
 
-    public String getDesc() {
-        return desc;
+    // 3、配置get XX方法获取枚举属性
+    public String getLabel() {
+        return label;
     }
-};
+
+    public String getLabelEn() {
+        return labelEn;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return "Season2{" +
+                "label='" + label + '\'' +
+                ", labelEn='" + labelEn + '\'' +
+                ", value='" + value + '\'' +
+                '}';
+    }
+}
