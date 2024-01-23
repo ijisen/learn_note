@@ -6,6 +6,10 @@ javac -encoding UTF-8 lesson.Day01_02_Variable.Variable.java
 #运行
 java lesson.Day01_02_Variable.Variable
 
+#仓库地址：
+- git 仓： https://github.com/ijisen/learn_note
+- gitee 仓： https://github.com/ijisen/learn_note
+
 
 #TODO:
 - 修饰符
@@ -24,6 +28,8 @@ java lesson.Day01_02_Variable.Variable
 # 快捷键
 - System.out.print => sout
 - public static void main => psvm
+
+
 
 
 
