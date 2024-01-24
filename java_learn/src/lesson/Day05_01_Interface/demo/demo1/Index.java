@@ -28,6 +28,7 @@ interface A {
     void open();
 
     void close();
+
 }
 
 /**
