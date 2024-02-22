@@ -8,7 +8,7 @@ package lesson.Day08_Exception;
  * --》 Exception： 一般性错误，空指针、读取不存在文件、网络中断
  * -----》 exception分为： 运行时异常 & 编译时异常
  * 异常处理的两种方式
- * --》 try - catch - finally
+ * --》 try - catch - finally (finally 无论如何都会执行)
  * --》 throws   将发生的异常抛出
  */
 public class Index {
