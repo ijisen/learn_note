@@ -1,0 +1,24 @@
+version: "3"
+services:
+  domain-mngr-webapp:
+    image: docker.zdns.cn/gtld/test/domain-mngr:latest
+    container_name: domain-mngr-webapp
+    restart: always
+    networks:
+      - gtld_apps_network
+    environment:
+      SERVICE_IP: ${SERVICE_IP}
+      SERVICE_PORT: ${SERVICE_PORT}
+      JOB_IP: ${JOB_IP}
+      JOB_PORT: ${JOB_PORT}
+      NACOS_SERVER: ${NACOS_SERVER}
+      ENABLE_ADMIN_MONITOR: "false"
+      ENABLE_SERVICE_NAME_URI: ${ENABLE_SERVICE_NAME_URI}
+    volumes:
+      - "/home/gtld/logs:/usr/local/apps/logs"  #挂载统一logs目录
+      - "./tmp:/usr/local/apps/tmp"
+    ports:
+      - "9996:8080" #服务端口
+networks:
+  gtld_apps_network:
+    external: true
