@@ -1,6 +1,6 @@
 package lesson.Day08_Exception;
 /**
- * compile exception【编译时异常】- 六种常见编译时异常类型
+ * exception【编译时异常】- 六种常见编译时异常类型  exception 默认指编译异常
  * 编译异常是指在编译期间，就必须处理的异常，否则代码编译不能通过
  * --> 操作数据库发生异常 NullPointerException
  * --> 操作文件时发生异常 ArrayIndexOutOfBoundsException
@@ -9,7 +9,7 @@ package lesson.Day08_Exception;
  * --> 操作文件，到文件末尾时发生异常 ClassCastException
  * --> 参数异常 NumberFormatException
  */
-public class Compile_Exception {
+public class _Exception {
     public static void main(String[] args) {
         AA a = new AA();
         a = null;

@@ -5,7 +5,7 @@ package lesson.Day08_Exception;
  * java中程序执行过程中发生的不正常情况称为“异常”，语法错误和逻辑错误不是异常
  * 异常分为两大类：
  * --》 Error： java虚拟机无法处理的问题，eg: jvm 内存错误、资源耗尽、栈溢出
- * --》 Exception： 一般性错误，空指针、读取不存在文件、网络中断
+ * --》 _Exception： 一般性错误，空指针、读取不存在文件、网络中断
  * -----》 exception分为： 运行时异常 & 编译时异常
  * 异常处理的两种方式
  * --》 try - catch - finally (finally 无论如何都会执行)
