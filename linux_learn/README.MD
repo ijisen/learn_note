@@ -68,9 +68,11 @@ node 服务启动：
    ps -A 
    
 根据端口号查看PID
-  netstat -anp|grep 7997
+  netstat -anp|grep [端口号]  #查看端口是否被占用（端口详情消息查看）
   // 查看端口
-  netstat -tunlp
+  netstat -tunlp  查看所有端口
+  // 关闭进程
+  kill -p [进程PID]
 	
 ### linux 修改文件内容
 
