@@ -1,0 +1,20 @@
+
+
+cp -r cert cert_20240402
+
+
+资产检测工具           7997   assetsearch.yun.zdns.cn /home/gtld/apps/asset-detect-tool-web-ui
+
+域名管家               9996   capital.yun.zdns.cn     /home/gtld/apps/domain-mngr-webapp
+curl https://127.0.0.1:19996 -v | head
+docker compose exec domain-mngr-webapp nginx -s reload
+
+
+域名合规检测（科技司） 7998   compliance.yun.zdns.cn  /home/gtld/apps/kjs-web-ui
+curl https://202.173.10.103:17998 -v | head
+docker compose exec kjs-web-ui nginx -s reload
+
+
+顶级域                 9997(19997)   tld.yun.zdns.cn  /home/gtld/apps/tld-webapp
+curl https://127.0.0.1:19997 -v | head
+docker compose exec cloud-registry-webapp nginx -s reload
