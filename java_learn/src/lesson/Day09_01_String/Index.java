@@ -11,11 +11,13 @@ package lesson.Day09_01_String;
  */
 public class Index {
     public static void main(String[] args) {
+        // 创建方式一：
         String str = "  韩  密  码  ";
         System.out.println(str.length());
         System.out.println(str.hashCode());
         System.out.println(str.trim());
-        str = "李雷";
+        // 创建方式二：
+        str = new String("李雷");
         System.out.println(str);
     }
 }

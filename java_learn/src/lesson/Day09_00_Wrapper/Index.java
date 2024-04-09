@@ -15,7 +15,7 @@ package lesson.Day09_00_Wrapper;
  * <p>
  * boolean          Boolean   1   false  --> Boolean --> 父类： Object
  * <p>
- * char             Character      2   0-65535  --> Boolean --> 父类： Object
+ * char             Character      2   0-65535  --> Character --> 父类： Object
  *
  * --> 包装类的常用方法
  * Integer：
