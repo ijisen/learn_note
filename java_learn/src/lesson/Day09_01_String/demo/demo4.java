@@ -12,8 +12,15 @@ public class demo4 {
         String s3 = s1 +s2;
         // 常量相加，直接看变量池
         String s4 = "S1" +"S2";
+        String s5 = "S1S2";
         System.out.println(s3);
         // false
         System.out.println(s3 == s4);
+        // false
+        System.out.println(s3 == s5);
+        // true
+        // intern 指针指向常量池
+        System.out.println(s3.intern() == s5);
+        System.out.println(s3.equals(s5));
     }
 }
