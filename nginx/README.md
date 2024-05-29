@@ -23,9 +23,12 @@ sudo yum install nginx
 	
 ### nginx -s reload
 	如果已经启动了就使用以下命令重新加载配置文件并重启
+
+### nginx -s reopen
+    重启 Nginx
 	
 ### nginx -s stop
-	快速停止
+	快速停止   sudo systemctl stop nginx
 	
 ### nginx -s quit
 	完整有序的关闭

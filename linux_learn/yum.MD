@@ -57,6 +57,7 @@ yum info extras：列出所有已安装但不在 Yum Repository 内的软件包�
 ## yum remove
 
 yum remove <package_name>：删除软件包命令
+	yum remove nginx -y
 
 
 yum deplist <package_name>：查看程序包依赖情况
