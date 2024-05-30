@@ -41,5 +41,8 @@ public class Index {
         array_2[4] = 55;
         System.out.println(Arrays.toString(array_2));
 
+        int[] arr_3 = new int[10];
+        System.out.println(Arrays.toString(arr_3));
+
     }
 }

@@ -27,5 +27,20 @@ public class Index {
         // [-10, -10, 0, 1, 8, 8, 20, 30]
         // [-10, -10, 0, 1, 8, 8, 20, 30]
         System.out.println(Arrays.toString(arr));
+
+        /**
+         * 二叉树查找
+         * ps: 二叉树查找必须是有序数组
+         * ps: 如果没有找到， return -(low + 1) => key not found [low 数组得长度]
+         * */
+        System.out.println(Arrays.binarySearch(arr, 850));
+
+
+        /**
+         * 数组拷贝
+         * // [-10, -10, 0, 1]
+         * */
+        Integer[] arr2 = Arrays.copyOf(arr, 4);
+        System.out.println(Arrays.toString(arr2));
     }
 }
