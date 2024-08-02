@@ -83,6 +83,8 @@ func basicDataExchangeStr() {
 /*
 String类型转 基本数据
 --> 2、 strconv
+
+string 转基本数据类型时，需要注意原始数据类型 以及 数据范围是否会溢出
 */
 func strExchangeBasicData() {
 	var strInt = "800"
@@ -99,6 +101,7 @@ func strExchangeBasicData() {
 	var intA, err = strconv.ParseInt(strInt, 10, 8)
 	// strconv.ParseInt: parsing "800": value out of range
 	fmt.Println(err)
+	// TODO: 虽然超出范围报错了，但还是会转出值： 127
 	fmt.Printf("字符串 转 int， 我的类型是：%T， 我的值是： %v \n", intA, intA)
 	var uintA, _ = strconv.ParseUint(strInt, 10, 32)
 	fmt.Printf("字符串 转 int， 我的类型是：%T， 我的值是： %v \n", uintA, uintA)
