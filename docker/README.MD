@@ -63,6 +63,8 @@
 #### logs 查看运行日志
 	 docker logs -f 50425b8f2ef3 <容器 ID>
 	 docker logs -f 50425b8f2ef3 <容器名字>
+	 docker compose logs -f
+	 docker logs --since="2023-07-22T15:00:00" my_container
 
 
 #### images 查看docker 镜像
